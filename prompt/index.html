@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>移动端登录页面</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #EEE;
+      margin: 0;
+      padding: 0;
+    }
+    form {
+      max-width: 400px;
+      margin: 50px auto;
+      padding: 20px;
+      background-color: white;
+      border-radius: 10px;
+      box-shadow: 0px 2px 10px rgba(0, 0, 0, 0.2);
+    }
+    input[type="text"],
+    input[type="password"] {
+      display: block;
+      width: 100%;
+      margin-bottom: 20px;
+      padding: 10px;
+      border-radius: 5px;
+      border: none;
+      background-color: #F7F7F7;
+      font-size: 16px;
+      color: #333;
+      box-sizing: border-box;
+    }
+    input[type="submit"] {
+      display: block;
+      width: 100%;
+      padding: 10px;
+      border-radius: 5px;
+      border: none;
+      background-color: #3A89FF;
+      font-size: 18px;
+      color: white;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+    }
+    input[type="submit"]:hover {
+      background-color: #3469CC;
+    }
+    .error-message {
+      color: red;
+      font-size: 14px;
+      margin-top: 10px;
+    }
+  </style>
+</head>
+<body>
+  <form action="" method="POST" id="login-form">
+    <label for="username-input">用户名</label>
+    <input type="text" id="username-input" name="username" required>
+    <label for="password-input">密码</label>
+    <input type="password" id="password-input" name="password" required>
+    <input type="submit" value="登录">
+    <div id="error-area"></div>
+  </form>
+  <script src="index.js"></script>
+</body>
+</html>
