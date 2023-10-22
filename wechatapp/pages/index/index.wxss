@@ -1,0 +1,38 @@
+/*继承*/
+page{
+  font-size: 32rpx;
+  line-height: 1.5;
+}
+image{
+  display: block;/*盒子的性质*/
+  width: 100%;
+}
+.hero{height: 100vh;}
+.hero.image{
+    height: 38.2vh;/*图片高度除以宽度，等比例，不能模糊*/
+}
+.hero.white{background: #ffff;}/*css限定，多人协作，同时具有hero和white*/
+/*.section{ height: 80vh;
+    background-color:green!important;}*/
+.hero .content{
+    padding-top: 10%;
+}
+
+.hero .header{
+    font-size: 72rpx;
+    font-weight: bold;
+    margin: 0 12% 8px;/*上 右 下 左 顺时针*/
+}
+.hero .sub-header{
+    font-size: 32rpx;
+    letter-spacing: 3px;
+    margin-bottom: 16rpx;
+    color: rgba(0,0,0,0.85);
+}
+.hero .description{
+    padding: 0 12%;
+    margin-bottom: 64rpx;
+}
+.hero .content.centered{
+    text-align: center;
+}
