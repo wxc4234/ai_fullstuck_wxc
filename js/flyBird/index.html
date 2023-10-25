@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>小心撞墙</title>
+    <link rel="stylesheet" href="./style.css">
+</head>
+<body>
+    <div id="wrapBg">
+
+        <div id="headTitle">
+            <img src="./img/bird0.png" alt="" id="headBird">
+        </div>
+        <button id="startBtn"></button>
+        <div id="grassLand1"></div>
+        <div id="grassLand2"></div>
+
+    </div>
+<script>
+    var jsHeadTitle = document.getElementById('headTitle')
+    var jsHeadBird = document.getElementById('headBird')
+    // 标题的摆动
+var Y=3
+var imgArr=['./img/bird0.png', './img/bird1.png']
+var index=0
+setInterval(headWave,200)
+    function headWave(){
+      Y=Y*-1
+      jsHeadTitle.style.top= jsHeadTitle.offsetTop + Y + 'px'
+      jsHeadBird.src=imgArr[index++]
+      if(index>1)
+      {index=0}
+    }
+    // 草地摆动
+    var jsGrassLand1 = document.getElementById('grassLand1')
+    var jsGrassLand2 = document.getElementById('grassLand2')
+    setInterval(landRun, 30)
+    function landRun() {
+      jsGrassLand1.style.left= jsGrassLand1.offsetLeft - 3+'px'
+      jsGrassLand2.style.left= jsGrassLand2.offsetLeft - 3+'px'
+      if(jsGrassLand1.offsetLeft<=-343){
+        jsGrassLand1.style.left= 343+'px'
+      }
+      if(jsGrassLand2.offsetLeft<=-343){
+        jsGrassLand2.style.left= 343+'px'
+      }
+    }
+</script>
+</body>
+</html>
