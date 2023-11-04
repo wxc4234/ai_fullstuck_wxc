@@ -1,0 +1,38 @@
+/* cover的专属样式 有利于维护 */
+.cover{
+  position: relative;
+}
+.cover image{
+  height: 38.2vh;
+}
+.cover .content{
+  /* 定位之后会离开文档流 ,也就没有了宽度 */
+  position: absolute;
+  bottom: 0;
+  background-color: rgba(0,0,0,.3);
+  width: 100%;
+  color: white;
+  /* 默认的文档流 块级元素占一行 */
+  /* 弹性布局 flex是新秀 能方便的解决左右布局 */
+  /* 在弹性容器内部 block元素不会换行，
+  和黑洞一样是新布局的上下文 */
+  display: flex;
+  /* justify-content: space-between; */
+  align-items: flex-end;
+  padding: 16rpx 32rpx;
+}
+.cover .content .header{
+  flex: 1;
+  font-style: 36rpx;
+  font-weight: bold;
+  letter-spacing: 4rpx;
+}
+.cover .sub-header{
+  font-size: 26rpx;
+  font-weight: normal;
+  text-transform: uppercase;
+}
+.cover .meta {
+  font-size: 26rpx;
+  width: 30vw;
+}

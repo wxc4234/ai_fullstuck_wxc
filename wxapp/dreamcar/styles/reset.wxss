@@ -1,0 +1,11 @@
+/* 样式的重置 */
+
+image{
+  display: block;
+  width: 100%;
+}
+/* css的继承 inherit*/
+page{
+  line-height: 1.5;
+  font-size: 32rpx;
+}

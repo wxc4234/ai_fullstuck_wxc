@@ -1,0 +1,20 @@
+/* 模块化的css */
+.spec{
+  /* 弹性容器是新的格式化上下文 */
+  display: flex;
+  font-size: 24rpx;
+  border-bottom: 1px solid #ededed;
+  
+}
+.spec .item{
+  border-right: 1px solid #ededed;
+  padding: 64rpx;
+  /* 在子元素里面设置多个元素的flex 它们会按比例分配 */
+  /* float: 1; */
+  width: 50%;
+}
+/* spec 模块 */
+.spec .item .value text{
+  font-size: 60rpx;
+  margin-right: 8rpx;
+}
