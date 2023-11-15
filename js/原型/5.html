@@ -1,0 +1,23 @@
+<script>
+Person.prototype.say=function(){
+    console.log('hello');
+  }
+
+  function Person(){
+    this.name = '万先澄';
+    this.age = 18;
+
+    // var this={
+    //   name:'万先澄',
+    //   age:18,
+    //   __proto__:Person.prototype
+    // }
+    // return this;
+  
+  
+  }
+
+  let p=new Person();
+  p.say();
+  console.log();
+</script>
