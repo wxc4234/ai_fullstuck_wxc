@@ -1,0 +1,4 @@
+var Foo=()=>{
+
+}
+new Foo();
