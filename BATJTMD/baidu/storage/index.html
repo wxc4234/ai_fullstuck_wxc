@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>前端存储</title>
+</head>
+<body>
+  <!-- 前端分为哪些考点 -->
+  <!-- - JS语法
+  - html5
+  - es6+的考点
+    let const class
+  - css3
+    transform
+  - vue react
+  -  -->
+  <div class="wrapper">
+    <h2>Todo Lists</h2>
+    <p></p>
+    <ul class="todos">
+      <li>Loading Todos</li>
+    </ul>
+    <form class="add-items" >
+      <input type="text" name="item" placeholder="请输入任务" required>
+      <input type="submit" value="+ Add Item">
+    </form>
+  </div>
+  <script>
+// DOM 编程
+  const oForm = document.querySelector('.add-items')
+  const todosList = document.querySelector('.todos')
+  const todos = JSON.parse(localStorage.getItem('todos'))||[];
+  //事件监听 DOM2级事件 onClick DOM0级事件 
+  // oForm.addEventListener('submit',function(){
+  //   // console.log('123');
+  //   // 获得用户的输入，加入ul列表
+  //   // form表单提交的默认行为是刷新页面
+  //   // css reset 重置样式 
+  //   event.preventDefault() //DOM event 事件对象
+  // })
+
+  oForm.addEventListener('submit',addItem)
+  // this指向由调用方式决定 
+  function addItem(event){
+    event.preventDefault();
+    console.log(this);
+    // 性能优化 ->DOM树状结构 
+    const text = (this.querySelector('[name=item]')).value
+    if(!text) return;
+
+    // this指向oForm 为什么要使用this，而不是用document，因为这样可以减少DOM的查询次数
+    // console.log(text);
+    const item = {
+      text,// == text:text es6的对象字面量的省略
+      done:false
+    }
+    todos.push(item); 
+    // 本地存储 BOM  KEY VALUE 存储
+    window.localStorage.setItem('todos',JSON.stringify(todos))
+    populateList(todos,todosList);
+    this.reset() //重置表单
+  }
+  function populateList(todos=[],todosList){
+    // map方法返回一个新数组，数组中的元素为原始数组元素调用函数处理后的值。
+    // map方法按照原始数组元素顺序依次处理元素。
+    // 注意： map() 不会对空数组进行检测。
+    todosList.innerHTML = ''
+    todos.forEach((todo, i) => {
+        todosList.innerHTML += `
+            <li>
+                <input type="checkbox" data-index=${i} id="item${i}" ${todo.done ? 'checked' : ''}>
+                <label for="item${i}">${todo.text}</label>
+            </li>
+        `
+    })
+
+  }
+
+
+  if(todos.length>0){
+    //复用 populateList 
+    populateList(todos,todosList)
+  }
+  
+
+  </script>
+</body>
+</html>
