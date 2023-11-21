@@ -1,0 +1,31 @@
+{
+  "posts": [
+    {
+      "id": 1,
+      "title": "json-server",
+      "author": "wxc"
+    },
+    {
+      "id": 2,
+      "title": "ajax",
+      "author": "万先澄"
+    },
+    {
+      "title": "你不知道的JavaScript",
+      "author": "wxx",
+      "id": 3
+    },
+    {
+      "title": "JavaScript高级语言程序设计",
+      "author": "星澄",
+      "id": 4
+    }
+  ],
+  "comments": [
+    {
+      "id": 1,
+      "body": "some comment",
+      "postId": 1
+    }
+  ]
+}
