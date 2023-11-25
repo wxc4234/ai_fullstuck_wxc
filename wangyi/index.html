@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="login">
+    <div class="login__hd">网易云音乐</div>
+
+    <div class="login__logo">
+      <img style="text-align: center;"  src="./图片 1.png" />
+    </div>
+
+    <div class="login__wrsp">
+      <p class="login_zh">账号</p>
+        <input id="phone" class="login_wrsp1" type="text" placeholder="请输入手机号" />
+        <p class="login_mima">密码</p>
+      <input id="mima" class="login_wrsp2" type="text" placeholder="请输入密码" />
+      </div>
+      <div class="login_btn1">
+        <button id="btn" class="button" >登录</button>
+      </div>
+
+      <script>
+        let btn = document.getElementById('btn');
+        let phone = document.getElementById('phone');
+        let mima = document.getElementById('mima');
+        btn.addEventListener('click',() => {
+          fetch(`http://192.168.31.26:3000/login?username=${phone.value}&password=${mima.value}`)
+          .then((data) => {
+            return data.json();
+          })
+          .then((res) => {
+            console.log(res);
+            btn.style.display = "block"
+          })
+        })
+      </script>
+
+
+
+  </div>
+</body>
+</html>

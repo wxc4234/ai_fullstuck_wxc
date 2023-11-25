@@ -1,0 +1,98 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+.login {
+  padding: 0 45px;
+  height: 100vh;
+  color: rgba(80, 80, 80, 1);
+	background-color: rgba(212, 48, 48, 1);
+}
+
+.login__logo {
+	top: 116px;
+  text-align: center;
+  position: relative;
+}
+
+.login__hd {
+  top: 22px;
+  font-size: 18px;
+  text-align: center;
+  position: relative;
+}
+
+
+.login_wrsp1{
+  width: 211px;
+	height: 42px;
+	left: 50%;
+	top: 60%;
+  background-color: rgba(212, 48, 48, 1);
+	text-indent: 5px;
+	border-radius: 2px;
+	font-size: 16px;
+	line-height: 150%;
+	border: rgba(153, 153, 153, 1) solid 1px;
+	text-align: left;
+  position: absolute;
+}
+.login_wrsp2{
+  width: 211px;
+  height: 42px;
+  left: 50%;
+  top: 70%;
+  background-color: rgba(212, 48, 48, 1);
+  text-indent: 5px;
+  border-radius: 2px;
+  font-size: 16px;
+  line-height: 150%;
+  border: rgba(153, 153, 153, 1) solid 1px;
+  text-align: left;
+  position: absolute;
+}
+.login_zh{
+  width: 211px;
+	height: 42px;
+	left: 42%;
+	top: 61%;
+	color: rgba(255, 255, 255, 1);
+	border-radius: 2px;
+	font-size: 20px;
+	line-height: 150%;
+	text-align: left;
+  position: absolute;
+}
+.login_mima{
+  width: 211px;
+	height: 42px;
+	left: 42%;
+	top: 71%;
+	color: rgba(255, 255, 255, 1);
+	border-radius: 2px;
+	font-size: 20px;
+	line-height: 150%;
+	text-align: left;
+  position: absolute;
+}
+
+.login_btn1{
+  width: 271px;
+	height: 36px;
+  left: 40%;
+	top: 400px;
+	color: rgba(80, 80, 80, 1);
+	background-color: rgba(255, 255, 255, 1);
+	border-radius: 16px;
+	font-size: 16px;
+	line-height: 150%;
+	text-align: center;
+  position: relative;
+}
+
+.button{
+  width: 271px;
+	height: 36px;
+  font-size: 16px;
+}
