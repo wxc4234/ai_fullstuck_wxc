@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>万氏奶茶店</title>
+</head>
+<body>
+    <h1>南昌首富-万氏奶茶</h1>
+    <div id="result">
+
+    </div>
+    <script>
+      const xhr = new XMLHttpRequest(); // 创建对象 js主动请求接口
+      xhr.open('GET','https://hhzpsi.laf.run/get-list'); // 配置请求方式和请求地址
+      xhr.send(); // 发送请求
+      xhr.onreadystatechange = function(e){
+        if(e.target.readyState === 4 && e.target.status === 200){
+          const {data} = JSON.parse(e.target.responseText); // 将字符串转换成对象 通过解构赋值获取data数据
+          console.log(data);
+          // document.querySelector('#result').innerHTML = data; // 将数据渲染到页面上 通过id选择器获取到result标签 然后将data数据渲染到页面上
+          document.querySelector('#result').innerHTML = data.map(todo => `
+          <li>
+              ${todo.txt}
+            </li>
+          `).join(''); // 将data数据遍历出来 通过map方法遍历出来的数据是一个数组 通过join方法将数组转换成字符串
+          // console.log(e.target.responseText);
+        }
+      }
+    </script>
+</body>
+</html>
