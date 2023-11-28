@@ -1,0 +1,13 @@
+// 零钱兑换 动态规划实现
+var coinChange = function(coins, amount) {
+    let dp = new Array(amount + 1).fill(Infinity); // dp[i]表示兑换i元需要的最少硬币数
+    // Array(amount + 1).fill(Infinity) 生成一个长度为amount + 1的数组，每个元素都是Infinity Infinity表示无穷大
+    dp[0] = 0;
+    for(let i = 0; i < dp.length; i++) {
+        for(let coin of coins) {
+            if(i - coin < 0) continue;
+            dp[i] = Math.min(dp[i], 1 + dp[i - coin]);// 1 + dp[i - coin]表示兑换i元需要的最少硬币数
+        }
+    }
+    return dp[amount] === Infinity ? -1 : dp[amount]; // 如果dp[amount] === Infinity说明无法兑换 返回-1 否则返回dp[amount]
+};
