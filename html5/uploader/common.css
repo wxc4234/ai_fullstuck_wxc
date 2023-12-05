@@ -1,0 +1,99 @@
+body,
+div,
+dl,
+dt,
+dd,
+ul,
+li,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+pre,
+code,
+form,
+fieldset,
+legend,
+input,
+button,
+textarea,
+blockquote {
+  margin: 0;
+  padding: 0;
+  outline: 0 /* 去掉点击时的边框 */;
+}
+html {
+  -ms-text-size-adjust: 100% /* 修复IE9中文重置字体大小，禁止字体调整 */;
+  -webkit-text-size-adjust: 100% /* 修复Chrome中文重置字体大小 */;
+}
+body,
+html {
+  height: 100%;
+  -webkit-tap-highlight-color: transparent /* 去掉移动端点击时的高亮 */;
+}
+.container {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  overflow: hidden;
+  color: rgba(0,0,0,0.3);
+}
+.page,
+body {
+  background-color: #ededed;
+}
+.page {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  overflow-y: auto;
+  -webkit-overflow-scrolling: touch;
+  box-sizing: border-box;
+  z-index: 1;
+}
+.page__hd {
+  padding: auto;
+}
+.page__title {
+  text-align: left;
+  font-size: 20px;
+  font-weight: 400;
+}
+.page__desc {
+  margin-top: 4px;
+  color: rgba(0,0,0,0.55);
+  text-align: left;
+  font-size: 14px;
+}
+.weui-cells {
+  margin-top: 8px;
+  border-color: #fff;
+  overflow: hidden;
+  position: relative;
+}
+.weui-cells::before,
+.weui-cells::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  right: 0;
+  height: 1px;
+  transform: scaleY(0.5);
+  z-index: 2;
+}
+.weui-cells::before {
+  border-top: 1px solid #000;
+  transform-origin: 0 0;
+  top: 0;
+}
+.weui-cells::after {
+  border-bottom: 1px solid #000;
+  transform: 0 100%;
+  z-index: 2;
+}
