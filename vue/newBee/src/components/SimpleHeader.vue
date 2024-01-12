@@ -1,28 +1,32 @@
 <template>
   <div class="simple-header">
-    <van-icon name="arrow-left" v-if="true" @click="goBack"/>
+    <van-icon name="arrow-left" v-if="back" @click="goBack" />
     <i v-else>&nbsp;</i>
-    <div class="simple-header-name">{{title}}</div>
+    <div class="simple-header-name">{{ title }}</div>
     <van-icon name="ellipsis" />
   </div>
   <div class="block"></div>
 </template>
 
 <script setup>
-import { useRouter } from 'vue-router'
+import { useRouter } from "vue-router";
 defineProps({
-  title: String
-})
+  title: String,
+  back: {
+    type: Boolean,
+    default: true,
+  },
+});
 
-const router = useRouter()
+const router = useRouter();
 
 const goBack = () => {
-  router.go(-1)
-}
+  router.go(-1);
+};
 </script>
 
 <style lang="less" scoped>
-.simple-header{
+.simple-header {
   display: flex;
   font-size: 18px;
   height: 44px;
@@ -36,8 +40,9 @@ const goBack = () => {
   width: 100%;
   box-sizing: border-box;
   z-index: 999;
+  background-color: #fff;
 }
-.block{
+.block {
   height: 44px;
 }
 </style>
