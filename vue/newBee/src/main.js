@@ -25,7 +25,11 @@ import {
   CheckboxGroup,
   Stepper,
   showToast,
-  SubmitBar
+  SubmitBar,
+  Dialog,
+  AddressList,
+  AddressEdit,
+  Area,
 } from "vant";
 import "vant/lib/index.css";
 
@@ -50,6 +54,10 @@ app.use(CheckboxGroup);
 app.use(Stepper);
 app.use(showToast);
 app.use(SubmitBar);
+app.use(Dialog);
+app.use(AddressList);
+app.use(AddressEdit);
+app.use(Area)
 
 app.use(router);
 app.use(store);

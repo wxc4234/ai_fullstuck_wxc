@@ -58,6 +58,8 @@ import SimpleHeader from "../components/SimpleHeader.vue";
 import { onMounted, ref ,computed} from "vue";
 import { getCart, modifyCart, deleteCartItem } from "@/api/cart.js";
 import { useStore } from "vuex";
+import { showDialog } from "vant";
+import{ useRouter} from "vue-router";
 
 const groupChange = () => {
   // 选中商品
@@ -117,6 +119,17 @@ const totalPrice = computed(() => { //当计算属性中的依赖变量有变动
   }, 0)
   return allPrice;
 })
+
+const router = useRouter();
+const onSubmit = () => {
+  //  没有选中商品，提示请选择商品进行结算,选中商品则跳转create-order页面
+  if (result.value.length === 0) {
+    showDialog({ message: '请选择商品进行结算' });
+    return;
+  }
+    router.push({path: '/create-order', query: { cartItemIds: JSON.stringify(result.value)}})
+}
+
 </script>
 
 <style lang="less" scoped>
