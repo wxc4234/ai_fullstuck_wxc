@@ -1,5 +1,5 @@
 <template>
-  <router-link to="/sex"></router-link>
+  <!-- <router-link to="/sex"></router-link> -->
   <img src="../assets/background.jpg" alt="" class="background" />
 
   <div class="main">
@@ -24,12 +24,14 @@
       />
     </van-popup>
 
-    <van-button type="primary" class="button">下一步</van-button>
+
+    <van-button type="primary" class="button" @click="onNext">下一步</van-button>
   </div>
 </template>
 <script setup>
 import { ref } from "vue";
-// import { showToast } from "vant";
+import { showToast } from "vant";
+import router from "../router";
 
 const fieldValue = ref("");
 const showPicker = ref(false);
@@ -40,10 +42,16 @@ const columns = ref([
 ]);
 
 const onConfirm = ({ selectedOptions }) => {
-  //selectedOptions是一个数组,里面包含了选择的每一项
   showPicker.value = false;
   fieldValue.value = selectedOptions[0].text;
-  // showToast(`选择了${fieldValue.value}`);
+};
+
+const onNext = () => {
+  if (!fieldValue.value) {
+    showToast("请选择您的性别");
+  } else {
+    router.push("/age");
+  }
 };
 </script>
 
@@ -98,8 +106,9 @@ const onConfirm = ({ selectedOptions }) => {
 .custom-field {
   z-index: 1000;
   width: 80%;
-  background-color: #ed7dac;
-  color: white;
+  background-color: rgb(255, 192, 203,0.5);
+  color: black;
   border-radius: 20px;
+  font-size: 18px;
 }
 </style>
