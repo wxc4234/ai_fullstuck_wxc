@@ -9,6 +9,7 @@
   },
   "dependencies": {
     "@vant/area-data": "^1.5.1",
+    "axios": "^1.6.5",
     "core-js": "^3.8.3",
     "lib-flexible": "^0.3.2",
     "vant": "^4.8.2",

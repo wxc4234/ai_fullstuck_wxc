@@ -106,7 +106,7 @@ const onNext = () => {
 .custom-field {
   z-index: 1000;
   width: 80%;
-  background-color: rgb(255, 192, 203,0.5);
+  background-color: white;
   color: black;
   border-radius: 20px;
   font-size: 18px;
