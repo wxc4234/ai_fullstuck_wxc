@@ -1,4 +1,3 @@
-const baseUrl = process.env.NODE_ENV === 'development' ? 'http://localhost:3000' :
-  'xxxxx' // 根据 process.env.NODE_ENV 的值判断当前是什么环境
+const baseUrl = process.env.NODE_ENV === 'development' ? 'http://192.168.1.207:3000' : 'xxxxx'
 
 export default baseUrl
