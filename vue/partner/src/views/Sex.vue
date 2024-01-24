@@ -32,9 +32,11 @@
 import { ref } from "vue";
 import { showToast } from "vant";
 import router from "../router";
+import { useStore } from "vuex";
 
 const fieldValue = ref("");
 const showPicker = ref(false);
+const store = useStore();
 
 const columns = ref([
   { text: "男", value: "male" },
@@ -44,6 +46,7 @@ const columns = ref([
 const onConfirm = ({ selectedOptions }) => {
   showPicker.value = false;
   fieldValue.value = selectedOptions[0].text;
+  store.dispatch("updateSex", fieldValue.value);
 };
 
 const onNext = () => {
@@ -51,6 +54,7 @@ const onNext = () => {
     showToast("请选择您的性别");
   } else {
     router.push("/age");
+    console.log("性别：",store.getters.putSex);
   }
 };
 </script>

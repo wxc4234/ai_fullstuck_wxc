@@ -35,6 +35,7 @@
 import { ref } from "vue";
 import { showToast } from "vant";
 import router from "../router";
+import { useStore } from "vuex";
 
 const showDate = ref(false);
 const currentDate = ref(['2024', '01', '01']);
@@ -42,11 +43,13 @@ const minDate = new Date(1995, 1, 31);
 const maxDate = new Date(2024, 1, 31);
 
 const fieldValue = ref("");
+const store = useStore();
 
 const onConfirm = () => {
   const formattedDate = currentDate.value.join('-');
   fieldValue.value = formattedDate;
   showDate.value = false;
+  store.dispatch("getAgeAction", fieldValue.value);
 };
 
 const onNext = () => {
@@ -54,6 +57,7 @@ const onNext = () => {
     showToast("请选择您的出生日期");
   } else {
     router.push("/address");
+    console.log("出生日期：",store.getters.getAgeGetter);
   }
 };
 </script>

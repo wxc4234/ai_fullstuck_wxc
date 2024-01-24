@@ -40,10 +40,14 @@ import { areaList } from '@vant/area-data';
 import { ref } from 'vue';
 import { showToast } from 'vant';
 import router from '../router';
+import { useStore } from 'vuex';
+
+
 
 const showAddress = ref(false);
 const fieldValue = ref();
 const arealist = ref(areaList);
+const store = useStore();
 
 
 const onNext = () => {
@@ -51,6 +55,10 @@ const onNext = () => {
     showToast('请选择您的居住城市');
   }else {
     router.push('/home');
+    console.log('居住城市：', fieldValue.value);
+    // 在组件或其他地方调用 saveDataToBackend
+store.dispatch('saveDataToBackend');
+
   }
 };
 
@@ -58,6 +66,7 @@ const onAreaConfirm = (selectedValues) => {
   const  data =  selectedValues.selectedOptions.map(item => item.text).join('-');
   fieldValue.value = data;
   showAddress.value = false;
+  store.dispatch('getAddressAction', fieldValue.value);
 };
 
 
