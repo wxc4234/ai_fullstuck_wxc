@@ -55,4 +55,5 @@ export default {
 <style>
 /*每个页面公共css */
 @import url('https://at.alicdn.com/t/c/font_4416312_yya8hpmtu5.css');
+@import url('https://at.alicdn.com/t/c/font_4421508_xn8n4jz6nk.css');
 </style>
