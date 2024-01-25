@@ -46,7 +46,7 @@ onUpdated(() => {
 		}
 		arr.push(item)
 	})
-	console.log(swiperList.value, '------');
+	// console.log(swiperList.value, '------');
 })
 </script>
 
