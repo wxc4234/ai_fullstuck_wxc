@@ -56,9 +56,6 @@ const onNext = () => {
   }else {
     router.push('/home');
     console.log('居住城市：', fieldValue.value);
-    // 在组件或其他地方调用 saveDataToBackend
-store.dispatch('saveDataToBackend');
-
   }
 };
 

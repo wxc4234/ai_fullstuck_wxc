@@ -3,7 +3,7 @@ import { createStore } from 'vuex';
 // 构建一个仓库收集数据，用于组件之间的数据共享
 const store = createStore({
   state: {
-    sex: '女',
+    sex: '',
     age: '',
     address: '',
   },
