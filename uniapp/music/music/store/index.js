@@ -8,9 +8,7 @@ export default createStore({
 			nickname: '',
 			userId: null,
 			avatar: ''
-		},
-    isShowPlayer: false, // 是否显示播放器
-    currentPlayId: null, // 当前播放歌曲id
+		}
 	},
 	mutations: {
 		changeIsShowMenu(state, flag) {
@@ -21,12 +19,6 @@ export default createStore({
 		},
 		getUserInfo(state, opt) {
 			state.userInfo = opt
-		},
-    changeCurrentPlayId(state, id) {
-      state.currentPlayId = id
-    },
-    changeIsShowPlayer(state, flag) {
-      state.isShowPlayer = flag
-    }
+		}
 	}
 })
