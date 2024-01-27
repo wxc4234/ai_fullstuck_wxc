@@ -6,6 +6,7 @@ const store = createStore({
     sex: '',
     age: '',
     address: '',
+    currentPage: 'Home',
   },
   mutations: {
     getSex(state, value) {
@@ -16,6 +17,9 @@ const store = createStore({
     },
     getAddress(state, value) {
       state.address = value;
+    },
+    setCurrentPage(state, page) {
+      state.currentPage = page;
     },
   },
   actions: {
@@ -28,12 +32,16 @@ const store = createStore({
     getAddressAction(context, value) {
       context.commit('getAddress', value);
     },
+    updateCurrentPage(context, page) {
+      context.commit('setCurrentPage', page);
+    },
   },
   getters: {
     //  添加一个getter,用于获取state中的sex数据
     putSex: state => state.sex,
     getAgeGetter: state => state.age,
-    getAddressGetter: state => state.address
+    getAddressGetter: state => state.address,
+    getCurrentPage: (state) => state.currentPage,
   }
 })
 

@@ -5,12 +5,14 @@
     <div class="home-md"></div>
     <div class="home-bd"></div>
   </div>
+  <FootBar />
 </template>
 
 <script setup>
 import { ref, onMounted } from 'vue'
 import { fetchData } from '@/api/axios.js'
 import Header from '@/components/Header.vue'
+import FootBar from '@/components/FootBar.vue';
 
 const data = ref([])
 
@@ -30,7 +32,7 @@ onMounted(async () => {
 </style>
 <style >
 body{
-  background: linear-gradient(to bottom,  #fbe5db, #fff);
+  background: linear-gradient(to bottom,  #fbe5db, #f7f7f7);
 
 }
 </style>
