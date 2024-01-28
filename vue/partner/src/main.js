@@ -6,7 +6,7 @@ import store from "./store";
 import 'vant/lib/index.css';
 import "lib-flexible/flexible";
 import "./assets/style/reset.css";
-import { Button ,Picker,Field, CellGroup,Popup ,DatePicker ,Icon,Area ,NavBar , Col, Row  } from "vant";
+import { Button ,Picker,Field, CellGroup,Popup ,DatePicker ,Icon,Area ,NavBar , Col, Row,Swipe, SwipeItem  } from "vant";
 
 const app = createApp(App);
 
@@ -21,6 +21,8 @@ app.use(Area);
 app.use(NavBar);
 app.use(Col);
 app.use(Row);
+app.use(Swipe);
+app.use(SwipeItem);
 
 
 app.use(router);

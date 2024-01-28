@@ -5,6 +5,9 @@ const instance = axios.create({
   timeout: 1000
 })
 
-export const fetchData = () => {
-  return instance.get('/message')
+export const fetchDataMen = () => {
+  return instance.get('/man')
+}
+export const fetchDataWomen = () => {
+  return instance.get('/women')
 }

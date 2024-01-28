@@ -1,7 +1,7 @@
 <!-- Header.vue -->
 <template>
   <div class="header">
-    <span>{{ currentPage }}</span>
+    <span class="header-text">{{ currentPage }}</span>
   </div>
 </template>
 
@@ -18,6 +18,13 @@ const currentPage = store.getters.getCurrentPage;
 .header {
   text-align: center;
   padding: 10px;
-  background-color: #f0f0f0;
+
+}
+.header-text {
+  font-size: 20px;
+  /* 斜体 */
+  font-style: italic;
+  /* 阴影 */
+  text-shadow: 0 0 20px #fff;
 }
 </style>
