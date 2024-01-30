@@ -1,16 +1,18 @@
 <template>
   <div>
-    <p>{{ count }}</p>
-    <button @click="()=> count++"></button>
+    <p>{{count}}</p>
+    <button @click="() => count++ ">+</button>
   </div>
 </template>
 
 <script setup>
-import { onMounted } from 'vue'
-onMounted(() => {
-  console.log('子组件中的onMounted')
-})
+import { onMounted, ref } from 'vue';
 
+const count = ref(0)
+
+// onMounted(() => {
+//   console.log('hello子组件中的onMounted');
+// })
 </script>
 
 <style lang="css" scoped>
