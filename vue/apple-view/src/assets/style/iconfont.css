@@ -1,8 +1,8 @@
 @font-face {
   font-family: "iconfont"; /* Project id 4429173 */
-  src: url('//at.alicdn.com/t/c/font_4429173_i838qz6nd8.woff2?t=1706702964548') format('woff2'),
-       url('//at.alicdn.com/t/c/font_4429173_i838qz6nd8.woff?t=1706702964548') format('woff'),
-       url('//at.alicdn.com/t/c/font_4429173_i838qz6nd8.ttf?t=1706702964548') format('truetype');
+  src: url('//at.alicdn.com/t/c/font_4429173_roq2r6pzsym.woff2?t=1706787377376') format('woff2'),
+       url('//at.alicdn.com/t/c/font_4429173_roq2r6pzsym.woff?t=1706787377376') format('woff'),
+       url('//at.alicdn.com/t/c/font_4429173_roq2r6pzsym.ttf?t=1706787377376') format('truetype');
 }
 
 .iconfont {
@@ -11,6 +11,10 @@
   font-style: normal;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+}
+
+.icon-denglu:before {
+  content: "\e621";
 }
 
 .icon-changyonglogo35:before {

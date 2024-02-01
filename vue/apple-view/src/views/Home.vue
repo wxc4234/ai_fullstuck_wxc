@@ -26,12 +26,38 @@
     <div class="header-phone" @click="togglePhoneInput">
       <van-icon name="bag-o" class="bag"/>
     </div>
-    <div class="header-login"></div>
+    <div class="header-login" @click="login">
+      <i class="iconfont icon-denglu"></i>
+    </div>
+  </div>
+
+  <div class="goodVideo">
+    <video
+      class="video"
+      src="https://www.runoob.com/try/demo_source/movie.mp4"
+      controls
+      preload="auto"
+    >
+    </video>
+  </div>
+
+  <div class="goodTitle" @click="synopsis">
+    <text class="title">商品标题</text>
+  </div>
+
+  <div class="goodMsg">
+    <text class="need" @click="baseNeed">基本要求</text>
+    <text class="revenue" @click="preReve">预计收入</text>
+  </div>
+
+  <div class="price">
+    <text class="firm" @click="price">公司名称：团购价，市场价</text>
   </div>
 </template>
 
 <script setup>
 import Logo from "@/components/Logo.vue";
+import router from "@/router";
 import { ref } from "vue";
 
 const showSearch = ref(false);
@@ -39,13 +65,28 @@ const showPhoneInput = ref(false);
 
 const toggleSearch = () => {
   showSearch.value = !showSearch.value;
-  showPhoneInput.value = false; // Close phone input when opening search
+  showPhoneInput.value = false;
 };
 
 const togglePhoneInput = () => {
   showPhoneInput.value = !showPhoneInput.value;
-  showSearch.value = false; // Close search input when opening phone input
+  showSearch.value = false;
 };
+const login = () => {
+  router.push("/login");
+}
+const synopsis = () => {
+  router.push("/synopsis");
+}
+const baseNeed = () => {
+  router.push("/baseneed");
+}
+const preReve = () => {
+  router.push("/prereve");
+}
+const price = () => {
+  router.push("/price");
+}
 </script>
 
 <style lang="less" scoped>
@@ -90,6 +131,73 @@ const togglePhoneInput = () => {
       color: #c5bfbf;
       text-align: center;
     }
+  }
+  .header-login{
+    position: relative;
+    align-items: center;
+    margin-top: 7px;
+    margin-left: 20px;
+    .icon-denglu{
+      font-size: 25px;
+      color: #c5bfbf;
+      text-align: center;
+    }
+  }
+}
+.goodVideo {
+  position: relative;
+  margin-top: 10px;
+  margin-left: 10px;
+  margin-right: 10px;
+  margin-bottom: 10px;
+  width: 80%;
+  .video {
+    width: 100%;
+    border-radius: 6px;
+  }
+}
+.goodTitle{
+  text-align: center;
+  margin-left: 10px;
+  margin-bottom: 10px;
+  width: 80%;
+  .title{
+    font-size: 35px;
+    color: #E4E76C;
+    margin-left: 20px;
+  }
+}
+.goodMsg{
+  position: absolute;
+  margin-left: 10px;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  width: 80%;
+  top: 56%;
+  text-align: center;
+  .need{
+    position: absolute;
+    font-size: 35px;
+    color: #E4E76C;
+    left: 4%;
+  }
+  .revenue{
+    position: absolute;
+    right: 0;
+    font-size: 30px;
+    color: #e7e8aa;
+  }
+}
+.price{
+  position: absolute;
+  margin-left: 10px;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  width: 80%;
+  top: 75%;
+  .firm{
+    color: red;
+    font-size: 20px;
   }
 }
 </style>
