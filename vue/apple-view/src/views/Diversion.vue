@@ -1,14 +1,14 @@
 <template>
 
   <div>
-    <Logo />
+    <Header />
     娱乐
 
   </div>
 </template>
 
 <script setup>
-import Logo from '@/components/Logo.vue'
+import Header from '@/components/Header.vue';
 
 </script>
 

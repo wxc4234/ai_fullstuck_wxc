@@ -1,12 +1,12 @@
 <template>
   <div>
-    <Logo />
+    <Header />
     培训
   </div>
 </template>
 
 <script setup>
-import Logo from '@/components/Logo.vue'
+import Header from '@/components/Header.vue';
 
 </script>
 

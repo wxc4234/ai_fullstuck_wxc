@@ -1,14 +1,15 @@
 <template>
+  <Header />
   <div>
-    <Header />
-    商务
+    第二个商品
   </div>
 </template>
 
 <script setup>
 import Header from '@/components/Header.vue';
+
 </script>
 
-<style lang="less" scoped>
+<style lang="scss" scoped>
 
 </style>
