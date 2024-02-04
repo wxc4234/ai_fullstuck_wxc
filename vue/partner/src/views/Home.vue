@@ -2,32 +2,57 @@
   <div class="home">
     <Header />
     <!-- vant 轮播图组件 -->
-    <van-swipe :autoplay="0" :indicator-color="'#fff'" :indicator-active-color="'#f16748'" v-model="currentIndex" ref="mySwipe">
+    <van-swipe
+      :autoplay="0"
+      :indicator-color="'#fff'"
+      :indicator-active-color="'#f16748'"
+      :show-indicators="false"
+      v-model="currentIndex"
+      ref="mySwipe"
+    >
       <van-swipe-item v-for="(item, index) in data" :key="index">
-        <img :src="item.image" alt="" class="image" @click="handleImageClick(index)" />
+        <img
+          :src="item.image"
+          alt=""
+          class="image"
+          @click="handleImageClick(index)"
+        />
+        <div class="home-bd">
+          <text>姓名：{{ item.name }}</text>
+          <text>年龄：{{ item.age }}</text>
+          <text>职业：{{ item.occupation }}</text>
+          <text>婚姻状况：{{ item.maritalStatus }}</text>
+          <text>身高：{{ item.height }}</text>
+          <text>体重：{{ item.width }}</text>
+          <text>籍贯：{{ item.address }}</text>
+          <text>性格：{{ item.personality }}</text>
+        </div>
       </van-swipe-item>
     </van-swipe>
-    <van-button v-if="data.length > 1" @click="prevImage" class="but-left">&lt;</van-button>
-    <van-button v-if="data.length > 1" @click="nextImage" class="but-right">&gt;</van-button>
-    <div class="home-bd"></div>
+    <van-button v-if="data.length > 1" @click="prevImage" class="but-left"
+      >&lt;</van-button
+    >
+    <van-button v-if="data.length > 1" @click="nextImage" class="but-right"
+      >&gt;</van-button
+    >
   </div>
   <FootBar />
 </template>
 
 <script setup>
-import { ref, onMounted } from 'vue';
-import { useStore } from 'vuex';
-import Header from '@/components/Header.vue';
-import FootBar from '@/components/FootBar.vue';
-import { fetchDataMen, fetchDataWomen } from '@/api/axios.js';
+import { ref, onMounted } from "vue";
+import { useStore } from "vuex";
+import Header from "@/components/Header.vue";
+import FootBar from "@/components/FootBar.vue";
+import { fetchDataMen, fetchDataWomen } from "@/api/axios.js";
 
 const data = ref([]);
-const currentIndex = ref(0);  // 当前显示图片的索引
+const currentIndex = ref(0); // 当前显示图片的索引
 const store = useStore();
 const mySwipe = ref(null);
 
 onMounted(async () => {
-  if (store.state.sex === '女') {
+  if (store.state.sex === "女") {
     const res = await fetchDataMen();
     data.value = res.data.data;
   } else {
@@ -47,11 +72,9 @@ const nextImage = () => {
 
 const handleImageClick = (index) => {
   // 可以在这里处理点击图片后的逻辑
-  console.log('Image clicked:', index);
+  console.log("Image clicked:", index);
 };
-
 </script>
-
 
 <style lang="less" scoped>
 /* 你的自定义样式，用于居中和其他样式 */
@@ -67,16 +90,15 @@ const handleImageClick = (index) => {
 }
 
 .image {
-  width: 63%;
-  border-top-right-radius: 15px;
-  border-top-left-radius: 15px;
-  margin-top: 10px;
+  width: 70%;
+  border-radius: 15px;
+  margin-top: 35px;
 }
 
 .but-left,
 .but-right {
   position: absolute;
-  top: 40%;
+  top: 45%;
   transform: translateY(-50%);
   background-color: rgba(0, 0, 0, 0);
   border: none;
@@ -92,11 +114,26 @@ const handleImageClick = (index) => {
   right: 0;
 }
 
+.home-bd {
+  position: absolute;
+  bottom: 0;
+  left: 18%;
+  padding: 10px;
+  border-bottom-right-radius: 15px;
+  border-bottom-left-radius: 15px;
+  text-align: center;
+  width: 59%;
+  font-size: 16px;
+  color: #6D6D6D;
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+
+}
 </style>
 
-<style >
-body{
-  background: linear-gradient(to bottom,  #fbe5db, #f7f7f7);
-
+<style>
+body {
+  background: linear-gradient(to bottom, #fbe5db, #f7f7f7);
 }
 </style>
