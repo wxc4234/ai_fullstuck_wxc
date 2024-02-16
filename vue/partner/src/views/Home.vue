@@ -10,8 +10,8 @@
       v-model="currentIndex"
       ref="mySwipe"
     >
-      <van-swipe-item v-for="(item, index) in data" :key="index">
-        <img
+      <van-swipe-item v-for="(item,index) in datas" :key="index">
+        <!-- <img
           :src="item.image"
           alt=""
           class="image"
@@ -26,13 +26,26 @@
           <text>体重：{{ item.width }}</text>
           <text>籍贯：{{ item.address }}</text>
           <text>性格：{{ item.personality }}</text>
+        </div> -->
+        <div>
+          <img :src="item.image" alt="" class="image" @click="handleImageClick(index)"/>
+          <div class="home-bd">
+            <text>姓名：{{ item.name }}</text>
+          <text>年龄：{{ item.age }}</text>
+          <text>职业：{{ item.occupation }}</text>
+          <text>婚姻状况：{{ item.maritalStatus }}</text>
+          <text>身高：{{ item.height }}</text>
+          <text>体重：{{ item.weight }}</text>
+          <text>籍贯：{{ item.address }}</text>
+          <text>性格：{{ item.personality }}</text>
+          </div>
         </div>
       </van-swipe-item>
     </van-swipe>
-    <van-button v-if="data.length > 1" @click="prevImage" class="but-left"
+    <van-button  @click="prevImage" class="but-left"
       >&lt;</van-button
     >
-    <van-button v-if="data.length > 1" @click="nextImage" class="but-right"
+    <van-button  @click="nextImage" class="but-right"
       >&gt;</van-button
     >
   </div>
@@ -40,27 +53,37 @@
 </template>
 
 <script setup>
-import { ref, onMounted } from "vue";
+import { ref, onMounted} from "vue";
 import { useStore } from "vuex";
 import Header from "@/components/Header.vue";
 import FootBar from "@/components/FootBar.vue";
-import { fetchDataMen, fetchDataWomen } from "@/api/axios.js";
+// import store from "@/store";
+// import { closeDialog } from "vant";
+// import { fetchDataMen, fetchDataWomen } from "@/api/axios.js";
 
-const data = ref([]);
+const datas = ref([]);
 const currentIndex = ref(0); // 当前显示图片的索引
 const store = useStore();
 const mySwipe = ref(null);
 
-onMounted(async () => {
-  if (store.state.sex === "女") {
-    const res = await fetchDataMen();
-    data.value = res.data.data;
-  } else {
-    const res = await fetchDataWomen();
-    data.value = res.data.data;
+// onMounted(async () => {
+//   if (store.state.sex === "女") {
+//     const res = await fetchDataMen();
+//     data.value = res.data.data;
+//   } else {
+//     const res = await fetchDataWomen();
+//     data.value = res.data.data;
+//   }
+//   console.log(data.value);
+// });
+
+onMounted(() => {
+  if (store.state.sex === "男") {
+    console.log("男");
+    datas.value = store.state.data
+    console.log(datas.value[1].image);
   }
-  console.log(data.value);
-});
+})
 
 const prevImage = () => {
   mySwipe.value.prev();

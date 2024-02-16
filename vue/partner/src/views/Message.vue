@@ -2,13 +2,18 @@
   <Header />
   <div class="message">
     <i class="iconfont icon-xiaoxi1 xiaoxi">
-      <text class="wenzi">消息</text>
+      <text class="wenzi">系统消息</text>
     </i>
     <i class="iconfont icon-icon_xihuan xihuan1">
       <text class="wenzi">他人发起的</text>
       </i>
     <i class="iconfont icon-icon_xihuan xihuan2">
       <text class="wenzi">我发起的</text>
+    </i>
+  </div>
+  <div class="notMessage">
+    <i class="iconfont icon-meiyouxiaoxi">
+      <text class="not">暂无消息</text>
     </i>
   </div>
   <FootBar />
@@ -58,5 +63,22 @@ import Header from "@/components/Header.vue";
   .wenzi{
       font-size: 15px;
     }
+}
+.notMessage{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 30px;
+  color: #f3b4be;
+  margin-top: 80px;
+  .icon-meiyouxiaoxi{
+    font-size: 200px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  .not{
+    font-size: 20px;
+  }
 }
 </style>
