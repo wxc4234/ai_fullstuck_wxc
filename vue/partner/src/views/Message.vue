@@ -1,13 +1,13 @@
 <template>
   <Header />
   <div class="message">
-    <i class="iconfont icon-xiaoxi1 xiaoxi">
+    <i class="iconfont icon-xiaoxi1 xiaoxi" @click="xitong">
       <text class="wenzi">系统消息</text>
     </i>
-    <i class="iconfont icon-icon_xihuan xihuan1">
+    <i class="iconfont icon-icon_xihuan xihuan1" @click="orther">
       <text class="wenzi">他人发起的</text>
       </i>
-    <i class="iconfont icon-icon_xihuan xihuan2">
+    <i class="iconfont icon-icon_xihuan xihuan2" @click="my">
       <text class="wenzi">我发起的</text>
     </i>
   </div>

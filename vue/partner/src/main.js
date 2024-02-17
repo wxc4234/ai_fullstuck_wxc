@@ -7,7 +7,7 @@ import 'vant/lib/index.css';
 import "lib-flexible/flexible";
 import "./assets/style/reset.css";
 import "./assets/style/iconfont.css";
-import { Button ,Picker,Field, CellGroup,Popup ,DatePicker ,Icon,Area ,NavBar , Col, Row,Swipe, SwipeItem  } from "vant";
+import { Button ,Picker,Field, Cell,CellGroup,Popup ,DatePicker ,Icon,Area ,NavBar , Col, Row,Swipe, SwipeItem  } from "vant";
 
 const app = createApp(App);
 
@@ -15,6 +15,7 @@ app.use(Button);
 app.use(Picker);
 app.use(Field);
 app.use(CellGroup);
+app.use(Cell);
 app.use(Popup);
 app.use(DatePicker);
 app.use(Icon);

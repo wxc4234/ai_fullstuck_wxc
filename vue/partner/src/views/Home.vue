@@ -81,7 +81,11 @@ onMounted(() => {
   if (store.state.sex === "男") {
     console.log("男");
     datas.value = store.state.data
-    console.log(datas.value[1].image);
+    console.log(datas.value[1]);
+  } else {
+    console.log("女");
+    datas.value = store.state.data2
+    console.log(datas.value[1]);
   }
 })
 
