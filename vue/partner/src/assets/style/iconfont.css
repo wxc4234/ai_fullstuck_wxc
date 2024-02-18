@@ -1,16 +1,36 @@
 @font-face {
   font-family: "iconfont"; /* Project id 4425335 */
-  src: url('//at.alicdn.com/t/c/font_4425335_g47a4bxfwph.woff2?t=1707225003437') format('woff2'),
-       url('//at.alicdn.com/t/c/font_4425335_g47a4bxfwph.woff?t=1707225003437') format('woff'),
-       url('//at.alicdn.com/t/c/font_4425335_g47a4bxfwph.ttf?t=1707225003437') format('truetype');
+  src: url('//at.alicdn.com/t/c/font_4425335_ro9qi5au25c.woff2?t=1708260425116') format('woff2'),
+       url('//at.alicdn.com/t/c/font_4425335_ro9qi5au25c.woff?t=1708260425116') format('woff'),
+       url('//at.alicdn.com/t/c/font_4425335_ro9qi5au25c.ttf?t=1708260425116') format('truetype');
 }
 
 .iconfont {
   font-family: "iconfont" !important;
-  font-size: 30px;
+  font-size: 16px;
   font-style: normal;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+}
+
+.icon-wode-shezhi:before {
+  content: "\e621";
+}
+
+.icon-kefu:before {
+  content: "\e63f";
+}
+
+.icon-gerenzhongxin:before {
+  content: "\e628";
+}
+
+.icon-bangzhu:before {
+  content: "\e8c3";
+}
+
+.icon-tuijian:before {
+  content: "\e631";
 }
 
 .icon-meiyouxiaoxi:before {

@@ -22,8 +22,14 @@
       </van-row>
     </div>
   </div>
-  <div class="funtion">
-
+  <div class="function">
+    <van-cell-group inset>
+      <van-cell title="推荐给好友"  class="iconfont icon-tuijian" is-link />
+      <van-cell title="人工客服" class="iconfont icon-kefu" is-link />
+      <van-cell title="帮助中心" class="iconfont icon-bangzhu" is-link />
+      <van-cell title="个人中心" class="iconfont icon-gerenzhongxin" is-link />
+      <van-cell title="我的设置" class="iconfont icon-wode-shezhi" is-link />
+    </van-cell-group>
   </div>
   <FootBar />
 </template>
@@ -66,21 +72,45 @@ import Header from '@/components/Header.vue'
     transform: translateY(-50%);
     color: #E28A90;
   }
-  .detail{
-    top: 50%;
-    font-size: 15px;
-    // 透明背景
 
-    color: #000;
-  //  使容器内的元素排在一行
-    position: absolute;
-    justify-content: space-between;
-    flex-wrap: wrap;
-    text-align: center;
-    // left: 0;
-  }
+
   .van-cell__title{
     text-align: center;
+    background: none;
+  }
+}
+
+.function{
+
+  height: 100px;
+  margin-top: 50px;
+  .iconfont{
+    // display: flex;
+    font-size: 20px;
+   height: 62px;
+    align-items: center;
+    background-color: rgba(255, 255, 254, 0.8);
+  }
+  .icon-tuijian{
+    color: #F1B672;
+    background: none;
+  }
+  .icon-kefu{
+    background: none;
+    color: #EF9E90;
+  }
+  .icon-bangzhu{
+    background: none;
+    color: #9eecd7;
+    font-size: 21px;
+  }
+  .icon-gerenzhongxin{
+    background: none;
+    color: #73dcee;
+  }
+  .icon-wode-shezhi{
+    background: none;
+    color: #F4BEBD;
   }
 }
 </style>

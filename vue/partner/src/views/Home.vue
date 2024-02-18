@@ -57,6 +57,7 @@ import { ref, onMounted} from "vue";
 import { useStore } from "vuex";
 import Header from "@/components/Header.vue";
 import FootBar from "@/components/FootBar.vue";
+import router from "@/router";
 // import store from "@/store";
 // import { closeDialog } from "vant";
 // import { fetchDataMen, fetchDataWomen } from "@/api/axios.js";
@@ -100,6 +101,12 @@ const nextImage = () => {
 const handleImageClick = (index) => {
   // 可以在这里处理点击图片后的逻辑
   console.log("Image clicked:", index);
+  router.push({
+    path: "/detail",
+    query: {
+      index: index,
+    },
+  });
 };
 </script>
 
