@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <script type="module">
+    import { reactive} from './reactive.js'
+    import { effect } from './effect.js'
+    const state = reactive({
+      name: 'wxc',
+      age: 18
+    })
+
+    effect(
+      ()=>{
+        console.log(`${state.name}今年${state.age}岁了`);
+      },
+      {lazy: false}
+    )
+
+   setInterval(() => {
+     state.age=state.age+1
+   }, 2000)
+  // state.age++ //把用到这个值的地方全部重新执行一遍
+  // console.log(state.name);
+  // console.log(state.age);
+  // </script>
+</body>
+</html>
