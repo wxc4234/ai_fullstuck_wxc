@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    #app{
+      width: 400px;
+      height: 400px;
+      border: 1px solid #000;
+    }
+    .box1, .box2, .box3{
+      background-color: rgb(200, 191, 188);
+      width: 100px;
+      height: 100px;
+      margin: 10px;
+
+    }
+    h2{
+      color: blueviolet
+    }
+    /* #app div{
+      border: 2px solid red;
+    } */
+    /* #app > div{
+      border: 2px solid red;
+    } */
+
+    /* .box1 + .box2{
+      border: 2px solid #ef0606;
+    } */
+
+    #app .box2{
+      border: 2px solid #ef0606;
+    }
+
+    input[abc="abc"]{
+      border: 2px solid #e13232;
+    }
+    #input::before{
+      content: '000';
+    }
+    /* #input:hover{
+      background-color: #933636;
+    } */
+    #input:focus{
+      background-color: #933636;
+    }
+  </style>
+</head>
+<body>
+  <!-- <div id="app">
+    <div class="box1">
+      <div class="title">
+        <h2>这是标题</h2>
+      </div>
+    </div>
+    <div class="box2"></div>
+    <div class="box3"></div>
+  </div> -->
+
+<input type="text" abc="abc">
+<input type="text" id="input">
+</body>
+</html>
