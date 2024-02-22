@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    *{
+      margin: 0;
+      padding: 0;
+    }
+    ul li{
+      list-style: none;
+      background-color: #f40;
+      width: 100px;
+    }
+    ul{
+      display: flex;
+      /* flex-direction: column; */
+      /* flex-wrap: wrap; */
+      /* flex-flow: column wrap; */
+      /* 是 flex-direction 和 flex-wrap 的简写形式，默认值为 row nowrap */
+      /* justify-content: flex-start; */
+      /*  控制子容器在主轴上的对齐方式 */
+      /* align-items: flex-start; */
+      /* 控制子容器在交叉轴上的对齐方式 */
+      /* align-content: flex-start; */
+      /* 控制多根轴线的对齐方式 */
+
+    }
+    /* .item2{
+      order: -1;  子元素order属性的值越小，排列越靠前  控制子容器的排列顺序
+    } */
+
+    li{
+      /* flex-grow: 0; */
+      /* 控制子容器的放大比例，默认值为 0 */
+      /* flex-shrink: 1; */
+      /* 控制子容器的缩小比例，默认值为 1 */
+      /* flex-basis: auto; */
+      /* 控制子容器的初始尺寸，默认值为 auto */
+      flex: 1;
+      /* 是 flex-grow, flex-shrink 和 flex-basis 的简写形式，默认值为 0 1 auto */
+    }
+  </style>
+</head>
+<body>
+  <ul>
+    <li class="item1">1</li>
+    <li class="item2">2</li>
+    <li class="item3">3</li>
+  </ul>
+</body>
+</html>
