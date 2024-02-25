@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<!-- <!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8">
@@ -46,5 +46,113 @@
   <div class="box">
     <div class="wrap">hello world</div>
   </div>
+</body>
+</html> -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Document</title>
+<style>
+  /* 方法1: 使用 Flexbox 布局 */
+  .container1 {
+    display: flex;
+    justify-content: center; /* 水平居中 */
+    align-items: center; /* 垂直居中 */
+    height: 100px; /* 为了演示效果设置高度 */
+    border: 2px solid #ccc; /* 为了演示效果添加边框 */
+    margin-bottom: 20px;
+  }
+
+  /* 方法2: 使用绝对定位和 transform */
+  .container2 {
+    position: relative;
+    height: 100px; /* 为了演示效果设置高度 */
+    border: 2px solid #ccc; /* 为了演示效果添加边框 */
+    margin-bottom: 20px;
+  }
+
+  .centered {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+
+  /* 方法3: 使用表格布局 */
+  .container3 {
+    display: table-cell;
+    text-align: center; /* 水平居中 */
+    vertical-align: middle; /* 垂直居中 */
+    height: 100px; /* 为了演示效果设置高度 */
+    border: 2px solid #ccc; /* 为了演示效果添加边框 */
+    margin-bottom: 20px;
+  }
+
+  /* 方法4: 使用 Grid 布局 */
+  .container4 {
+    display: grid;
+    place-items: center; /* 水平垂直居中 */
+    height: 100px; /* 为了演示效果设置高度 */
+    border: 2px solid #ccc; /* 为了演示效果添加边框 */
+    margin-bottom: 20px;
+  }
+
+  /* 方法5: 使用 CSS 伪元素和定位 */
+  .container5 {
+    position: relative;
+    height: 100px; /* 为了演示效果设置高度 */
+    border: 2px solid #ccc; /* 为了演示效果添加边框 */
+    margin-bottom: 20px;
+  }
+
+  .container5::after {
+    content: '';
+    display: block;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 100%; /* 伪元素填充整个父容器 */
+    height: 100%; /* 伪元素填充整个父容器 */
+  }
+
+  /* 为了展示效果，添加样式 */
+  .box {
+    background-color: lightblue;
+    padding: 20px;
+    border-radius: 5px;
+  }
+</style>
+</head>
+<body>
+
+<!-- 方法1: 使用 Flexbox 布局 -->
+<div class="container1">
+  <div class="box">示例</div>
+</div>
+
+<!-- 方法2: 使用绝对定位和 transform -->
+<div class="container2">
+  <div class="centered box">示例</div>
+</div>
+
+<!-- 方法3: 使用表格布局 -->
+<div class="container3">
+  <div class="box">示例</div>
+</div>
+
+<!-- 方法4: 使用 Grid 布局 -->
+<div class="container4">
+  <div class="box">示例</div>
+</div>
+
+<!-- 方法5: 使用 CSS 伪元素和定位 -->
+<div class="container5">
+  <div class="box">示例</div>
+</div>
+
 </body>
 </html>

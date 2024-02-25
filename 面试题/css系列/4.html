@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<!-- <!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8">
@@ -38,4 +38,36 @@
     });
   </script>
 </body>
-</html>
+</html> -->
+
+<!-- <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pixel Example</title>
+    <style>
+        .box {
+            width: 100px; /* 使用 CSS 像素定义宽度 */
+            height: 100px; /* 使用 CSS 像素定义高度 */
+            background-color: red;
+            margin: 10px; /* 使用 CSS 像素定义外边距 */
+        }
+    </style>
+</head>
+<body>
+    <div class="box" id="box"></div>
+    <script>
+        // 获取元素
+        var box = document.getElementById('box');
+        // 获取设备像素比
+        var dpr = window.devicePixelRatio || 1;
+        // 输出设备像素比
+        console.log('dpr:', dpr);
+        // 输出设备分辨率
+        console.log('设备分辨率:', screen.width, 'x', screen.height);
+        // 输出 CSS 像素大小
+        console.log('CSS px:', box.offsetWidth, 'x', box.offsetHeight);
+    </script>
+</body>
+</html> -->

@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<!-- <!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8">
@@ -29,5 +29,40 @@
     <li>3</li>
   </ul>
 
+</body>
+</html> -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BFC Example</title>
+    <style>
+        .container {
+            border: 1px solid red;
+            overflow: auto; /* 创建 BFC */
+        }
+        .float {
+            float: left;
+            width: 100px;
+            height: 100px;
+            background-color: blue;
+            margin-right: 20px;
+        }
+        .box {
+            width: 200px;
+            height: 200px;
+            background-color: yellow;
+            margin-bottom: 20px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="float"></div>
+        <div class="box"></div>
+        <div class="box"></div>
+    </div>
 </body>
 </html>

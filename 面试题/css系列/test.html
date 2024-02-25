@@ -1,0 +1,30 @@
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>vm/vh 布局示例</title>
+    <style>
+        .container {
+            width: 80vw; /* 初始宽度为视口宽度的 80% */
+            height: 80vh; /* 初始高度为视口高度的 80% */
+            margin: 0 auto;
+            background-color: lightblue;
+        }
+
+        @media screen and (max-width: 600px) {
+            .container {
+                width: 90vw; /* 小屏幕下宽度变为视口宽度的 90% */
+                height: 90vh; /* 小屏幕下高度变为视口高度的 90% */
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <p>示例</p>
+    </div>
+</body>
+</html>

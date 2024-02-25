@@ -53,7 +53,7 @@
 # 谈谈你对BFC的理解？(题目六)
 
 1. 是什么？
- - BFC(Block Formatting Context)块级格式化上下文
+ -  BFC(Block Formatting Context)块级格式化上下文
  - 是页面中的一块渲染区域，有一套渲染规则，决定了其子元素如何布局，以及和其他元素之间的关系和作用
 
 2. 渲染规则

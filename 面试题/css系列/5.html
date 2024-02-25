@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>隐藏元素示例</title>
+    <style>
+        .hidden-display-none {
+            display: none;
+        }
+
+        .hidden-visibility-hidden {
+            visibility: hidden;
+        }
+
+        .hidden-opacity-zero {
+            opacity: 0;
+        }
+
+        .hidden-position {
+            position: absolute;
+            left: -9999px;
+        }
+
+        .hidden-clip-path {
+            clip-path: polygon(0 0, 0 0, 0 0, 0 0);
+        }
+    </style>
+</head>
+<body>
+    <h2>使用不同方法隐藏元素</h2>
+
+    <h3>使用 display: none;</h3>
+    <div class="hidden-display-none">Display None</div>
+
+    <h3>使用 visibility: hidden;</h3>
+    <div class="hidden-visibility-hidden">Visibility Hidden</div>
+
+    <h3>使用 opacity: 0;</h3>
+    <div class="hidden-opacity-zero">Opacity Zero</div>
+
+    <h3>使用 position: absolute; left: -9999px;</h3>
+    <div class="hidden-position">Position Absolute</div>
+
+    <h3>使用 clip-path: polygon(0 0, 0 0, 0 0, 0 0);</h3>
+    <div class="hidden-clip-path">Clip Path</div>
+</body>
+</html>
