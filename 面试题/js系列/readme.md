@@ -126,3 +126,54 @@ valueOf() 只能将包装类的对象转换为原始类型
     - 返回新对象
 
 # 13. 说说call、apply、bind的原理？（题目十三）
+
+
+# 14. 说说js中的事件模型？（题目十四）
+- 什么是事件流
+- 事件模型的分类
+1. DOM0级事件模型 onclick 无法控制事件在捕获和冒泡在哪个阶段执行
+2. DOM1级事件模型 addeventListener 可以控制事件在捕获和冒泡在哪个阶段执行
+3. IE事件模型 attachEvent 无法控制事件在捕获和冒泡在哪个阶段执行
+
+# 15. 说说typeof和instanceof的区别？（题目十五）
+- typeof
+  - 能判断除了null之外的所有原始类型,因为null转换为二进制后全是0，而js判断是否是原始类型是通过转换为二进制后前三个是否是000
+  - typeof 还能判断function
+- instanceof
+  - 能判断一个变量是否属于某种类型，是通过原型链来判断的
+- Object.prototype.toString.call(x)
+
+  [].toString()  是数组身上的toString方法
+  Object.prototype.toString.call([])  是对象身上的toString方法
+
+  该方法会让 变量 x 调用对象上的 toString 函数，而toString返回值为'[object Object]'类型
+
+- Array.isArray()
+  - 只能用来判断变量是否是数组
+
+# 16. 说说Ajax的原理？（题目十六）
+- 是什么
+  - Async JavaScript And XML ，是一种异步js和网页交互技术，可以实现不刷新网页的情况下，就可以和服务器交换数据，更新页面
+- 原理
+  - 先创建一个XMLHttpRequest对象
+  - 然后调用open方法，设置请求的方法和请求的地址 与服务器建立连接
+  - 然后调用实例对象中的send方法，发送请求
+  - 监听onreadystatechange事件，通过判断readyState的值来获取到最终的数据
+  - 最后将数据更新到html页面上
+
+# 17. 怎么实现上拉刷新和下拉加载？（题目十七）
+1. 监听touchstart touchmove touchend 事件,记录手指移动的距离，大于临界值时实现刷新操作，其中使用transform : translateY()来添加各处的动画
+2. 根据手指滑动的方向和容器顶部底部到屏幕的距离来确定此时是该执行上拉加载更多，还是下拉刷新操作
+
+# 18. 防抖节流的原理？（题目十八）
+- 防抖
+  - 是指在一段时间内，只执行一次函数，如果在这段时间内再次触发了函数，就会重新计时
+  - 适用场景：搜索框输入，只有在用户输入完毕后，再发送请求
+- 节流
+  - 是指在一段时间内，只执行一次函数，如果在这段时间内再次触发了函数，就会忽略
+  - 适用场景：滚动条滚动，只有在滚动结束后，再发送请求
+- 实现原理：
+  - 防抖：使用setTimeout来实现
+  - 节流：使用时间戳来实现
+
+# 19

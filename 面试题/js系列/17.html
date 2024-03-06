@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    *{margin: 0;padding: 0;}
+    #ul{
+      padding: 0 10px;
+      overflow: auto;
+    }
+    li{
+      list-style: none;
+      background-color: rgb(233, 148, 38);
+      margin: 10px 0;
+      text-align: center;
+      font-size: 26px;
+    }
+    #topbar{
+      text-align: center;
+    }
+  </style>
+</head>
+<body>
+  <div id="wrap">
+    <div id="topbar"></div>
+
+    <ul id="ul">
+      <li>1</li>
+      <li>2</li>
+      <li>3</li>
+      <li>4</li>
+      <li>5</li>
+      <li>1</li>
+      <li>2</li>
+      <li>3</li>
+      <li>4</li>
+      <li>5</li>
+      <li>1</li>
+      <li>2</li>
+      <li>3</li>
+      <li>4</li>
+      <li>5</li>
+      <li>5</li>
+      <li>1</li>
+      <li>2</li>
+      <li>3</li>
+      <li>4</li>
+      <li>5</li>
+      <li>3</li>
+      <li>4</li>
+      <li>5</li>
+      <li>5</li>
+      <li>1</li>
+      <li>2</li>
+      <li>3</li>
+      <li>4</li>
+      <li>5</li>
+    </ul>
+    <div id="more"></div>
+  </div>
+
+  <script>
+    let startY = 0  // 手指触摸屏幕时的y轴偏移量
+    let moveY = 0
+    let rule = 40
+    let timer = null
+
+    let ul = document.getElementById('ul')
+    let topbar = document.getElementById('topbar')
+    let more = document.getElementById('more')
+
+
+    ul.addEventListener('touchstart', (e) => {
+      startY = e.touches[0].pageY
+      ul.style.position = 'relative'
+      ul.style.transition = 'transform 0s'
+    })
+
+    ul.addEventListener('touchmove', (e) => {
+      moveY = e.touches[0].pageY - startY  // 移动的距离
+      // console.log(moveY);
+
+      if (moveY > 0 && moveY < 40) {
+        topbar.innerText = '下拉刷新'
+        ul.style.transform = `translateY(${moveY}px)`
+        if (moveY > 30) {
+          topbar.innerText = '释放刷新'
+        }
+      }
+
+      if (moveY < 0 && ul.getBoundingClientRect().bottom <= window.innerHeight) {  // 上拉且到底了
+        more.innerText = '加载更多'
+      }
+    })
+
+    ul.addEventListener('touchend', (e) => {
+      // console.log(window.innerHeight);
+      // console.log(ul.getBoundingClientRect());
+      // ul 置顶否
+      if (ul.getBoundingClientRect().top > 0) {
+        ul.style.transition = 'transform 0.5s ease';
+        ul.style.transform = 'translateY(0px)'
+        topbar.innerText = '加载中'
+        //
+        console.log('加载中');
+      }
+
+      if (ul.getBoundingClientRect().bottom <= window.innerHeight) {
+        // 上拉请求新数据
+        console.log('请求新数据');
+      }
+    });
+  </script>
+</body>
+</html>

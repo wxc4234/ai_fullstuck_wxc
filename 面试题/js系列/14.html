@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <div id="box" onclick="handle">hello</div>
+  <div id="box">
+    <div id="box2"></div>
+  </div>
+
+  <div id="wrap">wrap</div>
+
+  <script>
+    // DOM0级事件处理程序 没办法控制事件的执行顺序
+    function handle(){
+      console.log('hello');
+    }
+
+    // DOM1级事件处理程序
+    let box = document.getElementById('box');
+    box.addEventListener('click', function(){
+      console.log('box',this);
+    }); // 第三个参数默认为false，表示冒泡阶段执行，true表示捕获阶段执行，且不会在冒泡阶段执行
+    let box2 = document.getElementById('box2');
+    box2.addEventListener('click', function(){
+      console.log('box2',this);
+    });
+  </script>
+
+  <script>
+
+  </script>
+
+</body>
+</html>
