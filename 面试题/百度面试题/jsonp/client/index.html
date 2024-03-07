@@ -7,10 +7,42 @@
 </head>
 <body>
   <button id="btn">获取数据</button>
+
+  <!-- <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script> -->
+
+  <!-- <script src="http://localhost:3000?cb='callback'"></script> -->
+
   <script>
+    // 1. 借助script的src属性给后端发送一个请求，且携带一个参数（'callback'）
+    // 2. 前端在widnow对象上添加了一个 callback 函数
+    // 3. 后端接收到这个参数 'callback' 后，将要返回给前端的数据data和这个参数 'callback' 进行拼接，成 'callback(data)',并返回
+    // 4. 因为window上已经有一个callback 函数，后端又返回了一个形如'callback(data)'，浏览器会将该字符串执行成callback的调用
+
+     function jsonp(url, cb) {
+      return new Promise((resolve, reject) => {
+        // 原理
+        const script = document.createElement('script');
+        script.src = `${url}?cb=${cb}`; // http://localhost:3000?cb='callback'
+        document.body.appendChild(script); // 浏览器自定会请求src里面的内容
+        window[cb] = (data) => {
+          resolve(data)
+        }
+        // callback()
+        // {
+        //   "callback" : () =>{}
+        // }
+
+      })
+    }
+
+
     let btn = document.getElementById('btn');
-    btn.addEventListener('click',()=>{
+    btn.addEventListener('click', () => {
       // 发请求
+      jsonp('http://localhost:3000', 'callback')
+      .then(res => {
+        console.log('后端的返回结果：' + res);
+      })
 
     })
   </script>

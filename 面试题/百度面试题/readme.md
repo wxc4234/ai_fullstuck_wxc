@@ -70,6 +70,10 @@ https://192.168.196.149:8080/user
 - 解决方法
   - JSONP
     - ajax 请求受同源策略的影响，但是 <script> 标签的src属性不受同源策略的影响，且该属性也会导致浏览器发送一个请求
+    1. 借助script的src属性给后端发送一个请求，且携带一个参数（'callback'）
+    2. 前端在widnow对象上添加了一个 callback 函数
+    3. 后端接收到这个参数 'callback' 后，将要返回给前端的数据data和这个参数 'callback' 进行拼接，成 'callback(data)',并返回
+    4. 因为window上已经有一个callback 函数，后端又返回了一个形如'callback(data)'，浏览器会将该字符串执行成callback的调用
 
   - 缺点
     - 必须要后端配合，后端返回的数据必须是一个函数调用，前端才能接收到数据
