@@ -77,4 +77,15 @@ https://192.168.196.149:8080/user
 
   - 缺点
     - 必须要后端配合，后端返回的数据必须是一个函数调用，前端才能接收到数据
-    - 只能用于GET请求，因为script标签只能发送GET请求
+    - 只能用于GET请求，因为script标签只能发送GET请求,浏览器加载资源只能用get请求
+
+  - Cors (Cross-Origin Resource Sharing)-- 后端通过响应头来告诉浏览器不要拒绝接收后端的响应
+
+  - node代理
+    - 只在开发环境下生效，可以用vite
+  - nginx代理 原理类似Cors，做白名单的配置 项目部署上线后使用的方案，生产环境下常用
+
+  - domian 当iframe中，当父级页面和自己页面的 子域名不一样的时候，通过设置document.domain='xx'来将xx定为基础域，这样就可以实现跨域
+
+  - postMessage
+  在iframe中，父级页面和子级页面之间的通信，可以通过postMessage来实现跨域通信

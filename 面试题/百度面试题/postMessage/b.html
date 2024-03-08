@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <h4>b.html</h4>
+
+  <script>
+    window.addEventListener('message' ,function(e){
+      console.log(e.data);
+      if(e.data){
+        setTimeout(function(){
+          e.source.postMessage('我是b.html','http://127.0.0.1:5500');
+      },2000)
+      }
+    })
+  </script>
+</body>
+</html>
