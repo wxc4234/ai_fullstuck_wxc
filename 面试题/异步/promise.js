@@ -110,6 +110,90 @@ class myPromise {
   }
 
   static all(promises) {
+    return new myPromise((resolve, reject) => {
+      let result = [];
+      let count = 0;
+      promises.forEach((promise, index) => {
+        promise.then(
+          (value) => {
+            result[index] = value;
+            count++;
+            if (count === promises.length) {
+              resolve(result);
+            }
+          },
+          (reason) => {
+            reject(reason);
+          }
+        );
+      });
+    });
+  }
 
+  static any(promises) {
+    return new myPromise((resolve, reject) => {
+      let count = 0;
+      let arr = [];
+      promises.forEach((promise, i) => {
+        promise.then(
+          (value) => {
+            resolve(value);
+          },
+          (reason) => {
+            arr[i] = reason;
+            count++;
+            if (count === promises.length) {
+              reject(new AggregateError(arr, "All promises were rejected"));
+            }
+          }
+        );
+      });
+    });
+  }
+
+  finally(callback) {
+    // 无论promise的状态如何都会执行
+    return this.then(
+      (value) => {
+       return Promise.resolve(callback()).then(() => value)
+      },
+      (reason) => {
+       return Promise.resolve(callback()).then(() => {throw reason})
+      }
+    );
+  }
+
+  static allSettled(promises) {
+    return new myPromise((resolve, reject) => {
+      let arr = [];
+      let count = 0;
+      promises.forEach((promise, i) => {
+        promise.then(
+          (value) => {
+            arr[i] = { status: "fulfilled", value: value};
+          },
+          () => {
+            arr[i] = { status: "rejected", reason: reason };
+          }
+        ).finally(() => {
+          count++;
+          if (count === promises.length) {
+            resolve(arr);
+          }
+        })
+      })
+    })
+  }
+
+  static resolve(value) {
+    return new myPromise((resolve) => {
+      resolve(value);
+    });
+  }
+
+  static reject(reason) {
+    return new myPromise(( reject) => {
+      reject(reason);
+    });
   }
 }
