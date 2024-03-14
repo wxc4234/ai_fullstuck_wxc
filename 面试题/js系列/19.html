@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    #box1{
+      width: 300px;
+      height: 300px;
+      background: red;
+    }
+    #box2{
+      width: 100px;
+      height: 100px;
+      background: blue;
+    }
+    li{
+      font-size: 30px;
+    }
+  </style>
+</head>
+<body>
+  <!-- <div id="box1">
+    <div id="box2"></div>
+  </div>
+
+  <script>
+
+    let box1 = document.getElementById('box1');
+    let box2 = document.getElementById('box2');
+
+    box1.addEventListener('click',()=>{
+      console.log('box1');
+    })
+
+    box2.addEventListener('click',()=>{
+      console.log('box2');
+    })
+
+  </script> -->
+
+  <ul>
+    <li>1</li>
+    <li>2</li>
+    <li>3</li>
+    <li>4</li>
+    <li>5</li>
+  </ul>
+
+  <script>
+    // let lis = document.querySelectorAll('li');
+
+    // lis.forEach(function(li){
+    //   li.addEventListener('click',()=>{
+    //     console.log(li.innerHTML);
+    //   })
+
+    // })
+
+    let ul = document.querySelector('ul');
+    ul.addEventListener('click',function(e){
+      console.log(e.target.innerHTML);
+    })
+  </script>
+</body>
+</html>

@@ -1,5 +1,5 @@
 # 1. js数组上有哪些方法？（题目一）
-1. 增加： push  unshift  splice  concat
+1. 增加： push  unshift  splice  concat 除了concat之外，其他的方法都会改变原数组
 2. 删除：pop  shift  splice  slice
 3. 改：reverse sort
 4. 查：indexOf includes  lastIndexOf  find
@@ -130,6 +130,8 @@ valueOf() 只能将包装类的对象转换为原始类型
 
 # 14. 说说js中的事件模型？（题目十四）
 - 什么是事件流
+  - 事件流描述的是从页面中接收事件的顺序
+  - 事件流分为三个阶段：捕获阶段、目标阶段、冒泡阶段
 - 事件模型的分类
 1. DOM0级事件模型 onclick 无法控制事件在捕获和冒泡在哪个阶段执行
 2. DOM1级事件模型 addeventListener 可以控制事件在捕获和冒泡在哪个阶段执行
@@ -176,4 +178,19 @@ valueOf() 只能将包装类的对象转换为原始类型
   - 防抖：使用setTimeout来实现
   - 节流：使用时间戳来实现
 
-# 19
+# 19. 说说你对事件代理的理解？（题目十九）
+- 也叫事件委托 （多个子容器需要绑定相同的事件）
+
+# 20. 说说js中的事件循环？（题目二十）
+- 是什么
+  - js引擎在执行js放入过程中会区分同步和异步代码，先执行同步在执行异步，异步中同样按照先执行同步再执行异步的顺序来执行，以此往复的循环
+
+- 异步
+  - 宏任务  script setTimeout  setInterval  setImmediate  I/O  UI rendering postMessage
+  - 微任务：promise.then nextTick（node） mutationObserver：监听dom的变化
+
+- Event-Loop
+  - 执行同步代码 （宏任务）
+  - 执行微任务，执行完毕
+  - 有需要的话就渲染页面
+  - 执行宏任务 （下一次事件循环的开始）

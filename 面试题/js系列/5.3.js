@@ -8,6 +8,8 @@ let obj = {
 }
 
 // const obj2 = structuredClone(obj);
+// structuredClone方法是一个异步方法，所以我们需要使用Promise来获取返回值，返回的是一个新的对象，不会受原对象的影响。
+
 
 function deepClone(obj) {
   return new Promise((resolve) => {

@@ -21,6 +21,7 @@ Function.prototype.myBind = function() {
     }
 
     return that.apply(obj, [...args, ...arg])
+    // return that.call(obj, ...args, ...arg)
   }
 
   return back

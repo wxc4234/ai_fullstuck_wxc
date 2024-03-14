@@ -5,7 +5,6 @@ let parent = {
     return 18;
   }
 }
-
 function clone(origin) {
   let obj = Object.create(origin);
   obj.like = function () {

@@ -31,7 +31,7 @@ arr2.unshift(0);
 console.log(arr2); // 输出: [0, 3, 4]
 
 // splice：
-arr1.splice(1, 0, 'a', 'b');
+arr1.splice(1, 0, 'a', 'b');    // 从索引1开始插入两个元素 ，1表示索引，0表示删除的元素个数, 'a', 'b'表示插入的元素
 console.log(arr1); // 输出: [1, 'a', 'b', 2, 3]
 
 // concat：
