@@ -1,0 +1,15 @@
+{
+  "name": "api_demo",
+  "version": "1.0.0",
+  "description": "- 自我介绍\r   - 了解openai的接口调用，完成内容生成、情感分析 NLP任务",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "dependencies": {
+    "openai": "^3.3.0"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC"
+}
