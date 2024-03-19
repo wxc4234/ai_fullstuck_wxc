@@ -1,6 +1,6 @@
 <template>
   <div class="login">
-    <h1>登录</h1>
+    <h1>注册</h1>
     <div class="login-wrapper">
       <div class="avatar">
         <img
@@ -10,6 +10,12 @@
       </div>
       <van-form @submit="onSubmit">
         <van-cell-group inset>
+          <van-field
+            v-model="nickname"
+            name="nickname"
+            label="昵称"
+            placeholder="昵称"
+          />
           <van-field
             v-model="username"
             name="username"
@@ -26,39 +32,38 @@
         </van-cell-group>
         <div style="margin: 16px">
           <van-button round block type="primary" native-type="submit">
-            登录
+            注册
           </van-button>
         </div>
       </van-form>
     </div>
-    <p class="register" @click="goRegister">新用户？点击这里注册</p>
+    <p class="register" @click="goLogin">已有账号？点击登录</p>
   </div>
 </template>
 
 <script setup>
-import { ref } from 'vue'
-import axios from '@/api'
-import { useRouter } from 'vue-router'
+import { ref } from "vue";
+import { useRouter } from "vue-router";
+import axios from "@/api";
 
-const username = ref('')
-const password = ref('')
-const router = useRouter()
+const router = useRouter();
+const nickname = ref("");
+const username = ref("");
+const password = ref("");
 
-const onSubmit = async(values) => {
-  // console.log(values);
-  const res = await axios.post('/user/login', { // /user/login是后端接口
-    username: values.username,
-    password: values.password
-    })
-    console.log(res);
-  localStorage.setItem('userinfo', JSON.stringify(res.data))
-  router.push('/noteClass')
+const onSubmit = async (values) => {
+  console.log(values);
+  const res = await axios.post("/user/register",values)
+  console.log(res);
+  showSuccessToast(res.msg);
+  setTimeout(() => {
+    router.push("/login");
+  },1500)
 }
 
-const goRegister = () => {
-  router.push('/register')
-}
-
+const goLogin = () => {
+  router.push("/login");
+};
 </script>
 
 <style lang="less" scoped>

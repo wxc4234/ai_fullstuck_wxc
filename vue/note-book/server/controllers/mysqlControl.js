@@ -36,11 +36,29 @@ const allService = {
   }
 }
 
+// 登录
 const userLogin = (username, password) => {
   let _sql = `select * from users where username="${username}" and password="${password}";`
   return allService.query(_sql)
 }
 
+// 查询
+const userFind = (username) => {
+  let _sql = `select * from users where username="${username}";`
+  return allService.query(_sql)
+}
+
+// const userRegister = (nickname, username, password) => {
+//   let _sql = `insert into users set nickname="${nickname}",username="${username}",password="${password}";`
+//   return allService.query(_sql)
+// }
+const userRegister = (values) => {
+  let _sql = `insert into users set nickname=?,username=?,password=?;`
+  return allService.query(_sql,values)
+}
+
 module.exports = {
-  userLogin
+  userLogin,
+  userFind,
+  userRegister
 }

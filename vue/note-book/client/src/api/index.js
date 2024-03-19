@@ -11,6 +11,7 @@ axios.defaults.headers.post['Content-Type'] = 'application/json';
 axios.interceptors.response.use(res => {
   if (res.status !== 200) { //程序错误
     showFailToast('服务器异常')
+    return Promise.reject(res);
   } else {
     if (res.data.code !== '8000') {
       showFailToast(res.data.msg);
