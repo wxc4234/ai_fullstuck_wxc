@@ -1,5 +1,5 @@
 import axios from 'axios';
-import { showFailToast } from 'vant';
+// import { showFailToast } from 'vant';
 
 axios.defaults.baseURL = 'http://localhost:3000';
 axios.defaults.headers.post['Content-Type'] = 'application/json';

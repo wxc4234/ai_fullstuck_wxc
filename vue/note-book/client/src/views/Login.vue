@@ -43,11 +43,15 @@ const password = ref('')
 
 const onSubmit = async(values) => {
   console.log(values);
-  const res = await axios.post('/user/login', {
+  try {
+    const res = await axios.post('/user/login', {
     username: values.username,
     password: values.password
-  })
-  console.log(res);
+    })
+    console.log(res);
+  } catch (err) {
+    console.log(err);
+  }
 }
 
 </script>
