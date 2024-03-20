@@ -1,5 +1,6 @@
 <template>
   <div class="login">
+
     <h1>登录</h1>
     <div class="login-wrapper">
       <div class="avatar">
@@ -51,7 +52,7 @@ const onSubmit = async(values) => {
     password: values.password
     })
     console.log(res);
-  localStorage.setItem('userinfo', JSON.stringify(res.data))
+  localStorage.setItem('userInfo', JSON.stringify(res.data))
   router.push('/noteClass')
 }
 
