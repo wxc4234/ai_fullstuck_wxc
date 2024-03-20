@@ -18,15 +18,30 @@
 </template>
 
 <script setup>
-import { useRoute } from "vue-router";
-import { reactive } from "vue";
+import { useRoute,useRouter } from "vue-router";
+import { onMounted, reactive } from "vue";
+import axios from '@/api'
 
-const state = {
+const state = reactive( {
   noteList: [],
-};
-
+});
 const route = useRoute();
-console.log(route);
+const router = useRouter();
+
+onMounted(async() => {
+  // 朝后端请求数据
+  const res =  await axios.post('/findNoteListByType', {
+    note_type: route.query.title
+  })
+  state.noteList = res.data
+  console.log(res.data);
+})
+
+const goNoteDetail = (id) => {
+  router.push({ path: '/noteDetail', query: { id: id } })
+}
+
+
 </script>
 
 <style lang="less" scoped>

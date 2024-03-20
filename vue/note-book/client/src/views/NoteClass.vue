@@ -40,8 +40,8 @@ const noteClassList = [
 ];
 
 const goNoteList = (title) => {
-  // router.push({ path: '/noteList', query: { title: title } });
-  router.push({ name: 'notelist', params: { title: title } });
+  router.push({ path: '/notelist', query: { title: title } });
+  // router.push({ name: 'notelist', params: { title: title } });
 }
 </script>
 
