@@ -68,11 +68,23 @@ const findNoteDetailById = (id) => {
   let _sql = `select * from note where id="${id}";`
   return allService.query(_sql)
 }
+// 发布
+const notePublish = (values, id) => {
+  let _sql = ''
+  if (id) { // 有id就是修改
+    _sql = `update note set userId=?,title=?,note_type=?,note_content=?,c_time=?,m_time=?,head_img=?,nickname=? where id=${id};`
+  } else {
+    _sql = `insert into note set userId=?,title=?,note_type=?,note_content=?,c_time=?,m_time=?,head_img=?,nickname=?;`
+  }
+
+  return allService.query(_sql, values)
+}
 
 module.exports = {
   userLogin,
   userFind,
   userRegister,
   findNoteListByType,
-  findNoteDetailById
+  findNoteDetailById,
+  notePublish
 }

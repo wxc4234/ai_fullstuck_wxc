@@ -5,9 +5,9 @@ const cors = require('koa2-cors'); //解决跨域
 const user = require('./routes/user.js')
 const note = require('./routes/note.js')
 
-
-app.use(bodyParser());
 app.use(cors());
+app.use(bodyParser());
+
 
 
 // const main = (ctx) => {

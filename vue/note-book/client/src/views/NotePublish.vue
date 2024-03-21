@@ -56,8 +56,11 @@
 <script setup>
 import { QuillEditor } from "@vueup/vue-quill";
 import "@vueup/vue-quill/dist/vue-quill.snow.css";
-import { reactive, ref } from "vue";
+import { reactive, ref, onMounted } from "vue";
 import axios from "@/api";
+import { useRouter, useRoute } from "vue-router";
+
+const router = useRouter();
 
 const show = ref(false);
 const actions = [
@@ -100,9 +103,38 @@ const publish = async () => {
     note_content: state.content,
     userId: id,
     nickname: nickname,
+    id: route.query.id || "",
   });
   console.log(res);
+  showSuccessToast(res.msg);
+
+  setTimeout(() => {
+    router.push("/noteClass");
+  }, 1500);
 };
+
+// -------- edit------------------------------------------------
+// const noteDetail = ref({})
+const route = useRoute();
+
+onMounted(async () => {
+  const res = await axios.get("/findNoteDetailById", {
+    params: {
+      id: route.query.id,
+    },
+  });
+  // noteDetail.value = res.data
+  state.content = res.data.note_content;
+  state.title = res.data.title;
+  state.picture.push({
+    content: res.data.head_img,
+    objectUrl: res.data.head_img,
+  });
+  state.note_type = res.data.note_type;
+
+  console.log(res);
+});
+
 </script>
 
 <style lang="less" scoped>
