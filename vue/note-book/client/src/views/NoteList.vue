@@ -1,4 +1,7 @@
 <template>
+  <div>
+    <Back />
+
   <div class="note-list">
     <ul v-if="state.noteList.length">
       <li
@@ -15,12 +18,14 @@
     </ul>
     <p class="empty" v-else>当前分类下还没有文章哦~~</p>
   </div>
+</div>
 </template>
 
 <script setup>
 import { useRoute,useRouter } from "vue-router";
 import { onMounted, reactive } from "vue";
 import axios from '@/api'
+import Back from '@/components/Back.vue'
 
 const state = reactive( {
   noteList: [],
@@ -47,7 +52,7 @@ const goNoteDetail = (id) => {
 <style lang="less" scoped>
 .note-list {
   width: 100%;
-  padding: 1rem 0.667rem 0;
+  padding: 1.5rem 0.667rem 0;
   box-sizing: border-box;
   ul {
     display: grid;

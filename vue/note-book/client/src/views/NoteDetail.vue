@@ -1,4 +1,6 @@
 <template>
+  <div>
+  <Back />
   <div class="note-detail">
     <div class="note-img">
       <img :src="noteDetail.head_img" alt="">
@@ -12,12 +14,14 @@
       <div class="content" v-html="noteDetail.note_content"></div>
     </div>
   </div>
+</div>
 </template>
 
 <script setup>
 import axios from '@/api'
 import { onMounted ,ref} from 'vue';
 import { useRoute } from 'vue-router';
+import Back from '@/components/Back.vue'
 
 const route = useRoute()
 const noteDetail = ref({})

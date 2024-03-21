@@ -1,0 +1,153 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="09e9218c-8465-4406-9d22-394dcbe193ca" name="更改" comment="">
+      <change beforePath="$PROJECT_DIR$/../../README.md" beforeDir="false" afterPath="$PROJECT_DIR$/../../README.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../git/readme.md" beforeDir="false" afterPath="$PROJECT_DIR$/../../git/readme.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../js/copy/2.js" beforeDir="false" afterPath="$PROJECT_DIR$/../../js/copy/2.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../js/copy/shallowcopy.js" beforeDir="false" afterPath="$PROJECT_DIR$/../../js/copy/shallowcopy.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../js/this/1.js" beforeDir="false" afterPath="$PROJECT_DIR$/../../js/this/1.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../js/this/2.js" beforeDir="false" afterPath="$PROJECT_DIR$/../../js/this/2.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../js/this/3.js" beforeDir="false" afterPath="$PROJECT_DIR$/../../js/this/3.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../js/this/4.js" beforeDir="false" afterPath="$PROJECT_DIR$/../../js/this/4.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../js/this/5.js" beforeDir="false" afterPath="$PROJECT_DIR$/../../js/this/5.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../js/this/6.js" beforeDir="false" afterPath="$PROJECT_DIR$/../../js/this/6.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../js/类型判断/3.js" beforeDir="false" afterPath="$PROJECT_DIR$/../../js/类型判断/3.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../js/类型判断/4.html" beforeDir="false" afterPath="$PROJECT_DIR$/../../js/类型判断/4.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../js/类型判断/instanceof.js" beforeDir="false" afterPath="$PROJECT_DIR$/../../js/类型判断/instanceof.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../leetcode/排序/bubble.js" beforeDir="false" afterPath="$PROJECT_DIR$/../../leetcode/排序/bubble.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../leetcode/排序/select.js" beforeDir="false" afterPath="$PROJECT_DIR$/../../leetcode/排序/select.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../leetcode/树/index2.js" beforeDir="false" afterPath="$PROJECT_DIR$/../../leetcode/树/index2.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../leetcode/用栈实现队列/1.js" beforeDir="false" afterPath="$PROJECT_DIR$/../../leetcode/用栈实现队列/1.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../leetcode/零钱兑换/1.js" beforeDir="false" afterPath="$PROJECT_DIR$/../../leetcode/零钱兑换/1.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../uniapp/music/api/request.js" beforeDir="false" afterPath="$PROJECT_DIR$/../../uniapp/music/api/request.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../uniapp/music/music/.hbuilderx/launch.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../uniapp/music/music/App.vue" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../uniapp/music/music/api/index.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../uniapp/music/music/api/mine.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../uniapp/music/music/api/request.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../uniapp/music/music/components/menuLeft/menuLeft.vue" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../uniapp/music/music/components/recommendSong/recommendSong.vue" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../uniapp/music/music/components/songList/songList.vue" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../uniapp/music/music/components/wyheader/wyheader.vue" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../uniapp/music/music/index.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../uniapp/music/music/main.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../uniapp/music/music/manifest.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../uniapp/music/music/pages.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../uniapp/music/music/pages/community/community.vue" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../uniapp/music/music/pages/follow/follow.vue" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../uniapp/music/music/pages/index/index.vue" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../uniapp/music/music/pages/login/login.vue" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../uniapp/music/music/pages/mine/mine.vue" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../uniapp/music/music/pages/play/play.vue" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../uniapp/music/music/pages/songsList/songsList.vue" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../uniapp/music/music/static/icon/boke-active.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../uniapp/music/music/static/icon/boke.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../uniapp/music/music/static/icon/shequ-active.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../uniapp/music/music/static/icon/shequ.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../uniapp/music/music/static/icon/wangyiyun1-active.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../uniapp/music/music/static/icon/wangyiyun1.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../uniapp/music/music/static/icon/wodeguanzhu-active.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../uniapp/music/music/static/icon/wodeguanzhu.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../uniapp/music/music/static/icon/yinle1-active.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../uniapp/music/music/static/icon/yinle1.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../uniapp/music/music/static/img/hello.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../uniapp/music/music/static/logo.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../uniapp/music/music/store/index.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../uniapp/music/music/uni.promisify.adaptor.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../uniapp/music/music/uni.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../uniapp/music/music/uni_modules/uni-easyinput/changelog.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../uniapp/music/music/uni_modules/uni-easyinput/components/uni-easyinput/common.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../uniapp/music/music/uni_modules/uni-easyinput/components/uni-easyinput/uni-easyinput.vue" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../uniapp/music/music/uni_modules/uni-easyinput/package.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../uniapp/music/music/uni_modules/uni-easyinput/readme.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../uniapp/music/music/uni_modules/uni-icons/changelog.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../uniapp/music/music/uni_modules/uni-icons/components/uni-icons/uni-icons.uvue" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../uniapp/music/music/uni_modules/uni-icons/components/uni-icons/uni-icons.vue" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../uniapp/music/music/uni_modules/uni-icons/components/uni-icons/uniicons.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../uniapp/music/music/uni_modules/uni-icons/components/uni-icons/uniicons.ttf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../uniapp/music/music/uni_modules/uni-icons/components/uni-icons/uniicons_file.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../uniapp/music/music/uni_modules/uni-icons/components/uni-icons/uniicons_file_vue.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../uniapp/music/music/uni_modules/uni-icons/package.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../uniapp/music/music/uni_modules/uni-icons/readme.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../uniapp/music/music/uni_modules/uni-scss/changelog.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../uniapp/music/music/uni_modules/uni-scss/index.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../uniapp/music/music/uni_modules/uni-scss/package.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../uniapp/music/music/uni_modules/uni-scss/readme.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../uniapp/music/music/uni_modules/uni-scss/styles/index.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../uniapp/music/music/uni_modules/uni-scss/styles/setting/_border.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../uniapp/music/music/uni_modules/uni-scss/styles/setting/_color.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../uniapp/music/music/uni_modules/uni-scss/styles/setting/_radius.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../uniapp/music/music/uni_modules/uni-scss/styles/setting/_space.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../uniapp/music/music/uni_modules/uni-scss/styles/setting/_styles.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../uniapp/music/music/uni_modules/uni-scss/styles/setting/_text.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../uniapp/music/music/uni_modules/uni-scss/styles/setting/_variables.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../uniapp/music/music/uni_modules/uni-scss/styles/tools/functions.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../uniapp/music/music/uni_modules/uni-scss/theme.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../uniapp/music/music/uni_modules/uni-scss/variables.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../uniapp/music/music/uni_modules/uni-search-bar/changelog.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../uniapp/music/music/uni_modules/uni-search-bar/components/uni-search-bar/i18n/en.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../uniapp/music/music/uni_modules/uni-search-bar/components/uni-search-bar/i18n/index.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../uniapp/music/music/uni_modules/uni-search-bar/components/uni-search-bar/i18n/zh-Hans.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../uniapp/music/music/uni_modules/uni-search-bar/components/uni-search-bar/i18n/zh-Hant.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../uniapp/music/music/uni_modules/uni-search-bar/components/uni-search-bar/uni-search-bar.vue" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../uniapp/music/music/uni_modules/uni-search-bar/package.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../uniapp/music/music/uni_modules/uni-search-bar/readme.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../uniapp/music/music/utils/index.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../apple-view/src/main.js" beforeDir="false" afterPath="$PROJECT_DIR$/../apple-view/src/main.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../demo/src/main.js" beforeDir="false" afterPath="$PROJECT_DIR$/../demo/src/main.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../diff/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/../diff/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../gpt-vue/src/views/home.vue" beforeDir="false" afterPath="$PROJECT_DIR$/../gpt-vue/src/views/home.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../learn-vue-router/src/App.vue" beforeDir="false" afterPath="$PROJECT_DIR$/../learn-vue-router/src/App.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../learn-vue-router/src/main.js" beforeDir="false" afterPath="$PROJECT_DIR$/../learn-vue-router/src/main.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../learn-vue-router/src/router/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/../learn-vue-router/src/router/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../mini-vue/src/reactivity/ref.js" beforeDir="false" afterPath="$PROJECT_DIR$/../mini-vue/src/reactivity/ref.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../mini-vue/src/reactivity/testRef.html" beforeDir="false" afterPath="$PROJECT_DIR$/../mini-vue/src/reactivity/testRef.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../newBee/src/api/axios.js" beforeDir="false" afterPath="$PROJECT_DIR$/../newBee/src/api/axios.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../newBee/src/views/Address.vue" beforeDir="false" afterPath="$PROJECT_DIR$/../newBee/src/views/Address.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../newBee/src/views/Login.vue" beforeDir="false" afterPath="$PROJECT_DIR$/../newBee/src/views/Login.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../questionnaire/src/store/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/../questionnaire/src/store/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../面试题/js系列/15.js" beforeDir="false" afterPath="$PROJECT_DIR$/../../面试题/js系列/15.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../面试题/js系列/5.1.js" beforeDir="false" afterPath="$PROJECT_DIR$/../../面试题/js系列/5.1.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../面试题/js系列/readme.md" beforeDir="false" afterPath="$PROJECT_DIR$/../../面试题/js系列/readme.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../面试题/百度面试题/2.1.js" beforeDir="false" afterPath="$PROJECT_DIR$/../../面试题/百度面试题/2.1.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../面试题/百度面试题/readme.md" beforeDir="false" afterPath="$PROJECT_DIR$/../../面试题/百度面试题/readme.md" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/../.." />
+  </component>
+  <component name="MarkdownSettingsMigration">
+    <option name="stateVersion" value="1" />
+  </component>
+  <component name="ProjectColorInfo"><![CDATA[{
+  "associatedIndex": 4
+}]]></component>
+  <component name="ProjectId" id="2dzFRSXh0X6rZnh2V11aIwNnN2u" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "git-widget-placeholder": "main"
+  }
+}]]></component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="应用程序级" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="默认任务">
+      <changelist id="09e9218c-8465-4406-9d22-394dcbe193ca" name="更改" comment="" />
+      <created>1711002993940</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1711002993940</updated>
+    </task>
+    <servers />
+  </component>
+</project>

@@ -9,6 +9,7 @@
     "preview": "vite preview"
   },
   "dependencies": {
+    "@vueup/vue-quill": "^1.2.0",
     "axios": "^1.6.8",
     "lib-flexible": "^0.3.2",
     "vant": "^4.8.6",

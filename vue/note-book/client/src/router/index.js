@@ -2,6 +2,10 @@ import { createRouter, createWebHistory } from 'vue-router'
 
 const routes = [
   {
+    path: '/',
+    redirect: '/noteClass'
+  },
+  {
     path: '/login',
     component: () => import('../views/Login.vue'), // 路由懒加载,通过箭头函数返回一个promise对象
     meta: {
@@ -34,6 +38,14 @@ const routes = [
       path: '/noteDetail',
       name: 'noteDetail',
       component: () => import('../views/NoteDetail.vue')
+  },
+  {
+    path: '/notePublish',
+    name: 'notePublish',
+    component: () => import('../views/NotePublish.vue'),
+    meta: {
+      title: '发布笔记'
+    }
   }
 ]
 
