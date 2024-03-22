@@ -8,7 +8,7 @@
 
 <script setup>
 import { computed } from 'vue';
-import { useStore } from 'vuex';
+import { useStore } from './store/gvuex';
 
 const store = useStore();
 const count = computed(() => store.state.count);

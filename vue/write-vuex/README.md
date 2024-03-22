@@ -24,8 +24,20 @@
     - 我平时比较喜欢在掘金写技术文章，我觉得这是一个很好的学习和分享的平台，我也会在上面看一些别人的文章，学习一些新的知识，我觉得这是一个很好的学习和交流的平台 -> es6
     - 通过阅读源码提升代码能力 -> vuex
 
+- vuex 源码学到了什么
+  - 严谨的代码逻辑
+    - vuex在实现 根据type查找mutation的时候，使用了&&运算符，如果找到了就执行，如果没找到就不执行
+  - 优秀的代码思想
+    - 提升自己的代码能力
+  - provide 和 inject
+    - use(store) 启用了vuex生态
+    - 调用了install方法，传递全局的应用实例 app
+  - dispatch 和 commit
+  - 从api的使用者 -> 了解底层和原理 -> 使用vue 就更加得心应手
+
 - vuex 源码学到了哪些？
   - 首先通过 createStore 返回了store状态树单例（确保正确性），因为他只会被调用一次
+
   - es6 class 去封装store类
     - 把复杂留给自己，把简单交给别人
       - options state函数返回的对象是初始数据
@@ -34,3 +46,29 @@
       - 完成了响应式数据，就是this._state
     - _代表私有属性，
       - 通过get方法 get state() 返回this._state.data
+  - 你怎么理解es6 中的class语法
+    - es6 主要目的是让JS 适合大型项目企业级开发, 更简洁优雅
+    - 箭头函数
+    - 解构赋值
+    - 模版字符串
+      - 要支持传统的面向对象，class，extends，super，static，get，set
+    - 依然是原型链式的面向对象
+    - 只不过class就是语法糖
+    - proxy 代理
+      - 代理对象，可以拦截对象的操作，比如get，set，deleteProperty，has，ownKeys，apply，construct
+      - 聊到reactive的源码
+        - 通过proxy实现响应式，监听对象的变化
+        - 通过effect实现副作用，监听对象的变化
+        - 通过track和trigger实现依赖收集和触发更新
+      - Map，WeakMap，Set，WeakSet
+        - Map是键值对的集合，可以遍历，可以用任何类型的值作为键 ，新的引入的数据结构
+        - WeakMap是弱引用的键值对的集合，键只能是对象，键是弱引用，不会阻止垃圾回收
+          - 和JSON Object的区别
+            - JSON Object是字符串的键值对的集合，不能遍历，键只能是字符串
+            - WeakMap是弱引用的键值对的集合，键只能是对象，键是弱引用，不会阻止垃圾回收
+            - Map是键值对的集合，可以遍历，可以用任何类型的值作为键
+        - Set是值的集合，值是唯一的，可以遍历
+        - WeakSet是弱引用的值的集合，值是唯一的，值是弱引用，不会阻止垃圾回收
+      - es6 模块化
+      - promise
+      - async await
