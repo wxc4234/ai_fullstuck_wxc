@@ -19,12 +19,8 @@ let tree = {
     }
   }
 }
-
-
 function preorder(root) {
   if (!root) return
-
-  
   preorder(root.left);
   preorder(root.right);
   console.log(root.val);

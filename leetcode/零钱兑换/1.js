@@ -1,5 +1,5 @@
 const coinChange = function (coins, amount) {
-  const f = [];
+  const f = []; // f[i]表示兑换i元需要的最少硬币数
   f[0] = 0;
   for (let i = 1; i <= amount; i++){
     f[i] = Infinity;//先设置为最大值

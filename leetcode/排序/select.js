@@ -1,4 +1,4 @@
-let arr = [2, 4, 5, 1, 3]
+// let arr = [2, 4, 5, 1, 3]
 
 // 找出(选择)原数组中的最小值，方舟当前数组的最前方
 
@@ -17,8 +17,9 @@ let arr = [2, 4, 5, 1, 3]
 //   }
 //   return arr
 // }
-// console.log(selectSort(arr));
+// console.log(selectSort(arr));// [1, 2, 3, 4, 5]
 
+let arr = [2, 4, 5, 1, 3]
 // 双指针
 function selectSort(arr) {
   let i = 0, j = arr.length - 1;
