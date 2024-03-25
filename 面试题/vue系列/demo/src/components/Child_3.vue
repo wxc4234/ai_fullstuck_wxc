@@ -17,7 +17,7 @@ const props = defineProps({
   }
 })
 
-const emits = defineEmits(['update:list'])
+const emits = defineEmits(['update:list']) // 事件名必须是 update:xxx
 
 const add = () => {
   const arr = props.list

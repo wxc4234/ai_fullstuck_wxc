@@ -24,3 +24,13 @@
   2. 子父组件通信：子组件通过emit触发事件，父组件通过v-on(@) 监听事件；或者通过provide/inject
   3. 子父组件通信：子组件拿到父组件的数据并修改后emit出来，父组件通过v-model实现双向绑定
   4. 子父组件通信：子组件defineExpose暴露方法，父组件通过ref读取整个子组件对象来获取值
+  5. 父子组件通信：父组件provide，子组件inject
+  6. EventBus 事件总线 vue3中不推荐使用，但是可以通过 mitt 插件实现
+  7. vuex || pinia
+
+
+# 6. v-for 和 v-if 共存的问题
+1. vue2中，v-for优先级更高，所以会报警告，因为性能浪费
+2. vue3中，v-for和v-if共存时，v-if优先级更高，v-if没有用到for中的变量是不会报错的
+
+# 7. data为什么要是一个函数，而不是一个对象
