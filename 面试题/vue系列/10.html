@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+</head>
+<body>
+
+  <div id="app">
+    <div class="box" @click="handleBox">
+      <h2 @click="handle">{{message}}</h2>
+    </div>
+
+    <input type="text" name="" id="" v-model.lazy="val">
+
+    <input type="text" name="" id="" v-model.trim="val">
+    <input type="text" name="" id="" v-model.number="val">
+    <p>{{val}}</p>
+  </div>
+
+  <script>
+    const { createApp, ref } = Vue
+
+    createApp({
+      setup() {
+        const message = ref('Hello vue!')
+        const handle =()=>{
+          console.log('h2 click');
+        }
+        const handleBox = ()=>{
+          console.log('box click');
+        }
+
+        const val = ref('')
+        return {
+          message,
+          handle,
+          handleBox,
+          val
+        }
+      }
+    }).mount('#app')
+  </script>
+</body>
+</html>
