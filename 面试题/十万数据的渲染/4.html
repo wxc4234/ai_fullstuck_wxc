@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+    }
+
+    .v-scroll {
+      width: 200px;
+      height: 400px;
+      border: 1px solid #000;
+      margin: 100px 0 0 100px;
+    }
+
+    li {
+      list-style: none;
+      padding-left: 20px;
+      height: 40px;
+      line-height: 40px;
+      border-bottom: 1px solid #cfa6a6;
+    }
+  </style>
+</head>
+
+<body>
+  <div id="app">
+    <div class="v-scroll" ref="scrollBox" @scroll="doScroll">
+      <ul>
+        <li v-for="(item,index) in currentList">{{index+1}} -- {{item}}</li>
+      </ul>
+    </div>
+  </div>
+
+  <script>
+    const { createApp, ref, onMounted, computed } = Vue
+
+    createApp({
+      setup() {
+        const allList = ref([]) //所有的数据
+        // const currentList = ref(['html']) // 可视区域的数据
+        const getAllList = (count) => { //接口请求
+          for (let i = 0; i < count; i++) {
+            allList.value.push(`我是列表${allList.value.length + 1}项`)
+          }
+        }
+        getAllList(100)
+        const boxHeight = ref(0) //可视区域高度
+        const itemHeight = ref(40) //每一项的高度
+        const scrollBox = ref(null) //滚动容器
+
+        onMounted(() => {
+          boxHeight.value = scrollBox.value.clientHeight
+          // console.log(scrollBox.value.clientHeight);
+        })
+        const itemNum = computed(() => {
+          return ~~(boxHeight.value / itemHeight.value) + 2
+        })
+        const startIndex = ref(0)
+
+        const doScroll = () => {
+          console.log(scrollBox.value.scrollTop);
+          const index = ~~(scrollBox.value.scrollTop / itemHeight.value)
+          if (index === startIndex.value) return
+          startIndex.value = index
+
+
+        }
+        const endIndex = computed(() => { //可视区域的最后一项的下标
+          let index = startIndex.value + itemNum.value * 2 //这里乘以2是为了让滚动条滚动到底部时，能够加载新的数据
+          if(!allList.value[index]){
+            index = allList.value.length - 1 // 当数据加载完毕时，让最后一项的下标等于数据的最后一项
+          }
+        })
+
+        // 拿到真正要被渲染的数据
+        const currentList = computed(()=>{
+          let index =0;
+          if(startIndex.value <= itemNum.value){ // [0,20] [1,21]
+            index = 0
+          }else{
+            index = startIndex.value - itemNum.value
+
+          }
+        })
+        return {
+          currentList,
+          allList,
+          boxHeight,
+          itemHeight,
+          scrollBox,
+          itemNum,
+          startIndex,
+          endIndex,
+
+        }
+      }
+    }).mount('#app')
+  </script>
+</body>
+
+</html>
