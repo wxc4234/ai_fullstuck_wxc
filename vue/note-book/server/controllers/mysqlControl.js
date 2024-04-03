@@ -76,8 +76,12 @@ const notePublish = (values, id) => {
   } else {
     _sql = `insert into note set userId=?,title=?,note_type=?,note_content=?,c_time=?,m_time=?,head_img=?,nickname=?;`
   }
+}
 
-  return allService.query(_sql, values)
+// 删除
+const deleteNoteById = (id) => {
+  let _sql = `delete from note where id="${id}";`
+  return allService.query(_sql)
 }
 
 module.exports = {
@@ -86,5 +90,6 @@ module.exports = {
   userRegister,
   findNoteListByType,
   findNoteDetailById,
-  notePublish
+  notePublish,
+  deleteNoteById
 }

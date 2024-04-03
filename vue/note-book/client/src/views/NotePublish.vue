@@ -116,8 +116,11 @@ const publish = async () => {
 // -------- edit------------------------------------------------
 // const noteDetail = ref({})
 const route = useRoute();
+// 接收NoteClass组件传过来的title
+const title = route.query.title
 
-onMounted(async () => {
+if (title) {
+  onMounted(async () => {
   const res = await axios.get("/findNoteDetailById", {
     params: {
       id: route.query.id,
@@ -134,6 +137,9 @@ onMounted(async () => {
 
   console.log(res);
 });
+}
+
+
 
 </script>
 
