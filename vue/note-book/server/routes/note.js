@@ -5,6 +5,7 @@ const {
   findNoteDetailById,
   notePublish,
   deleteNoteById,
+  searchNote,
 } = require("../controllers/mysqlControl.js");
 const { formateDate } = require("../utils");
 
@@ -123,4 +124,31 @@ router.post("/deleteNote", async (ctx) => {
   }
 });
 
+router.post('/searchNoteList', async(ctx) => {
+  const { title } = ctx.request.body;
+  console.log('title', title);
+  const res = await searchNote(title);
+  console.log(res);
+  try {
+      if(res.length) {
+          ctx.body = {
+              code: '8000',
+              data: res,
+              msg: 'success'
+          }
+      }else {
+          ctx.body = {
+              code:'8004',
+              data: 'error',
+              msg: '没有该文章哦'
+          }
+      }
+  } catch(err) {
+      ctx.body = {
+          code: '8005',
+          data: err,
+          msg: '服务器错误'
+      }
+  }
+})
 module.exports = router;

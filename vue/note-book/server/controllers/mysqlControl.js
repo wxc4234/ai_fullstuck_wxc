@@ -84,6 +84,12 @@ const deleteNoteById = (id) => {
   return allService.query(_sql)
 }
 
+// 搜索
+const searchNote = (title) => {
+  let _sql = `select * from note where title like "%${title}%";`
+  return allService.query(_sql)
+}
+
 module.exports = {
   userLogin,
   userFind,
@@ -91,5 +97,6 @@ module.exports = {
   findNoteListByType,
   findNoteDetailById,
   notePublish,
-  deleteNoteById
+  deleteNoteById,
+  searchNote
 }

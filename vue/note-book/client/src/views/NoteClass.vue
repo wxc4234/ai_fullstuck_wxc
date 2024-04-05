@@ -8,7 +8,21 @@
         <div>
           <van-icon name="edit" @click="goPublish" />
           <van-icon name="like-o" />
-          <van-icon name="search" />
+          <van-icon name="search" @click="showTop = true" />
+          <van-popup
+            v-model:show="showTop"
+            position="top"
+            :style="{ height: '100%' }"
+          >
+            <van-search
+              v-model="value"
+              show-action
+              placeholder="请输入搜索关键词"
+              @search="searchNote"
+              @cancel="onCancel"
+            />
+            <SearchList :searchList="searchList" />
+          </van-popup>
         </div>
       </header>
       <section>
@@ -17,7 +31,7 @@
           v-for="(item, index) in noteClassList"
           :key="index"
           :style="`background-color: ${item.bgColor}`"
-          @click = "goNoteList(item.title)"
+          @click="goNoteList(item.title)"
         >
           <span class="title">{{ item.title }}</span>
         </div>
@@ -27,10 +41,20 @@
 </template>
 
 <script setup>
-import { reactive } from "vue";
-import { useRouter } from 'vue-router';
+import { ref } from "vue";
+import SearchList from "@/components/SearchList.vue";
+import { useRouter } from "vue-router";
+import axios from "@/api";
 
 const router = useRouter();
+const showTop = ref(false);
+const value = ref("");
+const searchList = ref([]);
+
+const onCancel = () => {
+  showTop.value = false;
+};
+
 const noteClassList = [
   { bgColor: "#f0aa84", title: "美食" },
   { bgColor: "#dcf189", title: "旅行" },
@@ -40,13 +64,21 @@ const noteClassList = [
 ];
 
 const goNoteList = (title) => {
-  router.push({ path: '/notelist', query: { title: title } });
+  router.push({ path: "/notelist", query: { title: title } });
   // router.push({ name: 'notelist', params: { title: title } });
-}
+};
 
 const goPublish = (title) => {
-  router.push('/notePublish', { title: title });
+  router.push("/notePublish", { title: title });
+};
+
+const searchNote = async (val) => {
+  const res = await axios.post('/searchNoteList', {
+    title: val
+  })
+  searchList.value = res.data
 }
+
 </script>
 
 <style lang="less" scoped>
