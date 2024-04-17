@@ -1,0 +1,23 @@
+.header {
+  display: flex;
+  justify-content: space-between;
+  .logo {
+    width: 60px;
+    height: 60px;
+    margin-top: 5px;
+    background: url("@/assets/logo.png") no-repeat center center;
+    background-size: cover;
+  }
+  .user-info {
+    color: #fff;
+    .user-name {
+      margin-right: 20px;
+    }
+    .user-logout {
+      cursor: pointer;
+    }
+  }
+}
+.body{
+  height: calc(100vh - 64px);
+}

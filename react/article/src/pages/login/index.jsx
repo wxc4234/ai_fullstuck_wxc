@@ -1,5 +1,5 @@
 import React from "react";
-import { Card, Button, Checkbox, Form, Input,message } from "antd";
+import { Card, Button, Checkbox, Form, Input, message } from "antd";
 import logo from "@/assets/logo.png";
 import "./index.scss";
 import { useStore } from "@/store";
@@ -12,14 +12,14 @@ const Login = () => {
   const onFinish = async (values) => {
     console.log("Success:", values);
     try {
-      await loginStore.login(values)
+      await loginStore.login(values);
       navigate("/");
     } catch (error) {
       messageApi.open({
         type: "error",
         content: error.response?.data?.message || "登录失败",
-      })
-   }
+      });
+    }
   };
   return (
     <div className="login">
@@ -31,7 +31,7 @@ const Login = () => {
           initialValues={{
             username: "13911111111",
             password: "246810",
-            remember: true
+            remember: true,
           }}
         >
           <Form.Item
