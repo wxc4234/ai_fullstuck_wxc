@@ -10,15 +10,18 @@ function App() {
   const [input, setInput] = useState("");
   const [output, setOutput] = useState("");
   const [disabled, setDisabled] = useState(false);
-
+  const [progressItems, setProgressItems] = useState([]);
+  const [ready, setReady] = useState(true);
   const worker = useRef(null);
 
   const translate = () => {
-    setDisabled(true);
+    setDisabled(false);
+    // console.log(targetLanguage)
+    // return;
     worker.current.postMessage({
       text: input,
       src_lang: sourceLanguage,
-      tat_lang: targetLanguage,
+      tgt_lang: targetLanguage,
     });
   };
 
@@ -27,12 +30,46 @@ function App() {
       worker.current = new Worker(new URL("./worker.js", import.meta.url), {
         type: "module",
       });
-      const onMessageReceived = (e) => {
-        console.log(e);
-      }
-      worker.current.addEventListener('message', onMessageReceived);
-      return ()=> worker.current.removeEventListener('message', onMessageReceived);
     }
+    const onMessageReceived = (e) => {
+      console.log(e);
+      switch (e.data.status) {
+        case "initiate":
+          setReady(false);
+          setProgressItems((prev) => [...prev, e.data]);
+          break;
+        case 'progress':
+          setProgressItems(
+            prev => prev.map(item => {
+              if (item.file === e.data.file) {
+                return {...item, progress: e.data.progress};
+              } else {
+                return item;
+              }
+            })
+          )
+          break;
+        case 'done':
+          setProgressItems(
+            prev => prev.filter(item => item.file !== e.data.file)
+          )
+          break;
+        case 'ready':
+          setReady(true);
+          break;
+        case 'update':
+          setOutput(e.data.output);
+          break;
+        case 'complete':
+          setDisabled(false);
+          break;
+      }
+    };
+
+    worker.current.addEventListener("message", onMessageReceived);
+
+    return () =>
+      worker.current.removeEventListener("message", onMessageReceived);
   });
 
   return (
@@ -63,6 +100,16 @@ function App() {
         Translate
       </button>
       <Progress text="下载中" percentage={20} />
+      <div className="progress-bars-container">
+        {ready == false && (
+          <label htmlFor="">Loading Models ...(only run code)</label>
+        )}
+        {progressItems.map((data) => (
+          <div key={data.file}>
+            <Progress text={data.file} percentage={data.progress}></Progress>
+          </div>
+        ))}
+      </div>
     </>
   );
 }
