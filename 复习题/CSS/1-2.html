@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>BFC Example</title>
+<style>
+.parent {
+    border: 1px solid black;
+    overflow: auto; /* 触发 BFC */
+}
+
+.float-left {
+    float: left;
+    width: 100px;
+    height: 100px;
+    background-color: lightblue;
+    margin: 10px;
+}
+
+.clearfix {
+    clear: both;
+    background-color: lightgreen;
+    padding: 10px;
+}
+</style>
+</head>
+<body>
+
+<div class="parent">
+    <div class="float-left"></div>
+    <div class="clearfix">Clearfix Content</div>
+</div>
+
+</body>
+</html>
