@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+    }
+
+    .container {
+      height: 300px;
+      overflow-y: scroll;
+    }
+
+    .item {
+      border: 1px solid #eee;
+      line-height: 30px;
+      height: 30px;
+      padding: 0 10px;
+      cursor: pointer;
+    }
+  </style>
+  <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+</head>
+
+<body>
+  <div id="app"></div>
+  <div class="container" @scroll="onScroll">
+    <div class="panel" ref="panel">
+      <div class="item" v-for="item in visibleList" :key="item">
+        { item }
+      </div>
+    </div>
+  </div>
+
+  <script>
+    const { ref, createApp, onMounted } = Vue;
+    createApp({
+      setup(){
+        let raw = Array(10000).fill(0).map((v,i)=> `item-${i}`);
+        let count = 10; //一次显示的列表数;
+        let start = ref(0);//起始位置
+        let end = ref(0);//结束位置
+        let itemHeight = 30;//一个列表项的高度
+        let totalHeight = raw.length*itemHeight;
+
+        let visibleList = raw.slice(start.value,end.value);
+        const onScroll = function (e) {
+        start.value = Math.floor(e.target.scrollTop / itemHeight); //当滚动后，重新计算起点的位置
+        end.value = start.value + count; //设置终点的位置
+        // paddingTop.value = start.value*itemHeight;
+      };
+
+      return {
+        visibleList, paddingTop, panel, onScroll
+      };
+      }
+    })
+  </script>
+
+</body>
+
+</html>
