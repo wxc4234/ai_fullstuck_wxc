@@ -155,3 +155,69 @@
     - 509：带宽限制，表示服务器带宽限制
     - 510：不扩展，表示服务器不支持这个扩展
     - 511：网络认证要求，表示服务器需要网络认证
+
+
+# 得到
+- vue的响应式原理
+vue中的响应式原理是一种设计模式，它主要是通过数据层的变化来驱动视图层的变化，对于vue的响应式原理来说，他有几个核心的概念：
+  - 首先就是数据劫持：在vue被实例化的时候，他会有一个observer的实例它负责遍历整个数据对象，然后通过Object.defineProperty来对数据的每一个属性进行劫持，当数据被访问时，会触发这个数据的getter方法，当数据被修改时，会触发这个数据的setter方法
+  - 然后他会进行依赖收集的操作：当数据被一个属性（这个属性也就是Wattcher）访问时，会触发这个数据身上的getter方法，getter方法会将这个Wattcher添加到这个数据的依赖中也就是Dep中，这样的话当数据更新时就可以通知到所有依赖它的Wattcher了
+  - 依赖收集之后就是派发更新了：当数据进行更新的时候，会触发这个数据身上的setter方法，setter方法会通知Dep，Dep再去通知所有的Watcher，Watcher收到通知之后会执行update方法，去更新视图，这样我们就实现了数据的响应式了
+
+- vue的双向绑定原理
+vue是一种MVVM的框架，它的核心就是View-Model层，vue的双向绑定就是通过ViewModel层来实现的，在ViewModel层中，会将Model层的数据绑定到View层。它的实现原理是基于响应式处理来实现的，他也会有一个数据劫持和依赖收集的过程。
+双向绑定的实现主要是使用v-model指令来实现的，v-model是一个语法糖，它是v-bind、v-on和input事件的结合，数据到视图的实现原理是通过v-bind来实现的，v-bind主要是运用响应式原理，将数据绑定到视图上，视图到数据的实现是通过v-on和input的事件来实现的，通过v-on来监听input事件，然后通过input事件来更新数据
+
+- ref 和 reactive 有什么区别（ reactive 里为什么只能放引用类型）
+reactive：
+  - reactive主要是用来处理复杂数据类型的，比如对象和数组，它不能直接用于代理基本数据类型，因为其内部是通过Proxy来实现代理操作的，而Proxy只能拦截对象的操作，因此reactive只能用于代理对象和数组
+ref：
+  - 它可以代理所有的数据类型，但是通常我们都是更倾向于使用它来代理基本数据类型
+  - 它对于基本数据类型的代理是通过使用一个value对象来包装的，然后通过Proxy来代理这个对象，这样就可以实现对基本数据类型的代理了
+  - 对于引用类型的代理，ref中也是通过包装一个value对象来实现的，但是它的包装主要是对reactive的一个包装，可以说他对于引用类型的代理是通过reac来实现的
+  - 因此与reactive不同的是，对于ref代理的数据我们需要通过.value来访问
+
+- vue2和vue3的区别
+  - 响应式方面：
+    - 在vue2中我们都是通过使用Object.defineProperty来实现响应式的，但是这个方法有缺陷，它无法监听数组的变化，虽然vue2增加了set和delete的方法来解决了一部分的问题，但是它只能监听数组下标的变化，而不能监听数组的长度的变化，因此在vue2中是通过重写数组的方法来实现的
+    - 在vue3中，我们是通过Proxy来实现响应式的，Proxy它有13个拦截器，因此它可以更好的监听数据的变化，并且它还可以监听数组的变化
+  - API方面：
+    - vue2中我们使用的是Options API，它其中有data、methods、computed等，因为它是通过选项的方式来进行组织的，所以当组件的逻辑变得复杂的时候，就会导致逻辑分散在各个选项中，不易维护
+    - vue3中使用的是Composition API，它是通过函数的方式来组织组件内的逻辑的，它让我们能进行函数式的编程，可以使代码能更好的进行复用
+  - 生命周期
+    - 在vue2中生命周期钩子函数有8个，分别有四个过程，创建阶段是：beforeCreate、created，挂载阶段：beforeMount、mounted，更新阶段：beforeUpdate、updated，销毁阶段：beforeDestroy、destroyed，对于特殊特还有keep-alive中的钩子函数：activated、deactivated，分别是组件被激活和组件被停用时触发
+    - 在vue3中，beforeCreate、created钩子函数被setup语法糖给取代了，对于挂载阶段和更新阶段都加上了on的前缀，比如onBeforeMount、onMounted、onBeforeUpdate、onUpdated，对于销毁阶段它被改成了onbeforeUnmount、onUnmounted，对于keep-alive也被替换成了onActivated、onDeactivated
+  - 根节点
+    - 在vue2中我们需要再template中定义一个div来包裹所有的其他元素，因此这会造成多创造了一个div元素，影响页面的性能和结构
+    - 在vue3中我们使用了Fragment来替代div，Fragment是一个空的标签，他不会在页面上显示，因此也就不会影响页面的性能和结构
+  - TypeScript
+    - 在vue3中他对于TypeScript的支持更加的友好，因为vue3就是使用TypeScript来进行开发的
+  - 性能
+    - 在vue3中还对diff算法进行了优化，比如vue2中是通过递归的方式来进行比较的，在vue3中是通过双端比较的方式来进行比较的这样可以减少比较的次数
+
+- Proxy是什么
+  - 它是ES6新增的一个对象，主要是用来拦截对象的操作，他有13种拦截器，比如get、set、deleteProperty、has、ownKeys等，通过这些拦截器可以实现对对象的操作，比如对对象的读取、设置、删除、遍历等
+
+- vuex 和 pinia 相比 有什么区别，有什么优缺点
+vuex 和 pinia 都是一种状态管理的工具
+  - 在vuex中，他有一个store，store中有state、mutations、actions、getters等方法，其中state用来保存所有共享状态数据，mutations是唯一可以修改state的地方，它接收包含state参数的回调函数和一个字符串类型的事件类型，它主要是用来处理同步操作，异步操作是交给actions来处理的，actions它不能直接修改state，它只能通过commit来提交一个mutation来修改state，getters是用来获取state的，它类似于计算属性，可以根据state的值来计算出一个新的值，它不能直接修改state，它只能获取state的值
+  - 它的优点是：它是一个官方的状态管理工具，有着成熟的生态，它适合于大型项目的构建
+  - 缺点就是：它的使用方式比较繁琐，对于小型项目来说，可能会显得有些臃肿
+
+  - pinia它是基于vue3的状态管理工具，它是通过store来管理状态的，和vuex不同的是，它没有mutations，它是通过actions来修改state的，在actions中可以进行同步和异步操作，它还有一个auto import的特性，可以自动导入store
+  - 它的优点是：它更轻量级，更适合小型项目的构建，通过自动导入的功能，可以给开发者带来更好的体验
+  - 缺点是：相较于vuex，它的生态还不够完善，可能会有一些问题，并且它只适合于vue3的项目，因为它是基于vue3的
+
+- vuex的调用过程
+  - 首先创建一个store文件，然后在main.js中use这个store，然后在组建中可以通过this.$store来访问这个store，通过this.$store.state来访问state，通过this.$store.commit来提交一个mutations，通过this.$store.dispatch来提交actions，通过this.$state.getters来获取getters
+
+- vite 和 webpack 各自的优点（vite为什么快）
+  - vite是一个脚手架工具，它是通过浏览器的ES Module来开发的，它不需要提前打包所有的代码，而是通过import的方式来按需加载模块，这样就减少了打包的时间，因此它的启动速度就更快
+  - 它还有一个更好的热更新功能，当源代码发生改变时，它因为ES Module的特性，只会重新编译发生改变的模块，而不是整个项目，这样就减少了编译的时间
+  - 它利用了ESBuild构建工具，因此打包速度更快
+  - 它提供了更简洁的配置，能使开发者更快的上手
+
+  - webpack它是通过loader和plugin来实现打包的，它会根据我们的配置文件中的entry，分析出所有的依赖然后打包成一个文件交给浏览器去渲染，因此它的打包速度会比较慢
+  - 它的优点是：它有更丰富的生态，几乎可以处理所有的资源，因此它的稳定性更好
+  - 它是根据配置文件进行打包的，因此我们可以灵活的使用配置来满足我们的需求
+  - 并且webpack还提供了代码分割能力，可以通过动态导入的方式将代码分割成多个chunk，从而优化加载时间和首次渲染速度
